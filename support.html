@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이좋아 - 베이비케어 지원</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #ffb3d9 0%, #ffa3c7 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 5px 15px rgba(255, 179, 217, 0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+        .description {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #ffb3d9;
+        }
+        .description p {
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+        .english {
+            color: #95a5a6;
+            font-size: 0.95em;
+        }
+        .contact-section {
+            margin-top: 30px;
+        }
+        .contact-item {
+            background: linear-gradient(135deg, #fff5fa 0%, #ffe8f0 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 179, 217, 0.3);
+            border-color: #ffb3d9;
+        }
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .contact-subtitle {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+        .email-link {
+            display: inline-block;
+            color: #e91e63;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .email-link:hover {
+            background-color: #ffb3d9;
+            color: white;
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">👶</div>
+        
+        <h1>아이좋아 - 베이비케어</h1>
+        <p class="subtitle">I Love Baby Care</p>
+        
+        <div class="description">
+            <p><strong>아이좋아 베이비케어 홈페이지 입니다.</strong></p>
+            <p class="english">(This is the I Love Baby Care website.)</p>
+        </div>
+
+        <div class="description">
+            <p><strong>지원이 필요하시면 메일로 연락 부탁드립니다</strong></p>
+            <p class="english">(If you need support, please contact us by email.)</p>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-item">
+                <div class="icon">🛠️</div>
+                <div class="contact-title">기술문의</div>
+                <div class="contact-subtitle">Technical inquiries</div>
+                <a href="mailto:pakss894@gmail.com" class="email-link">pakss894@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">💬</div>
+                <div class="contact-title">기타 불편사항 문의</div>
+                <div class="contact-subtitle">For other inquiries</div>
+                <a href="mailto:pakss3282@gmail.com" class="email-link">pakss3282@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
