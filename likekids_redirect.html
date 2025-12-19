@@ -1,0 +1,247 @@
+<!DOCTYPE html>                                                               
+  <html lang="ko">                                                              
+  <head>                                                                        
+      <meta charset="UTF-8">                                                    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+      <title>아이좋아 - 초보맘 육아 필수템</title>                              
+                                                                                
+      <!-- SEO 메타 태그 -->                                                    
+      <meta name="description" content="아이좋아 - 초보맘을 위한 육아 기록 앱. 수유, 수면, 기저귀 등 모든 육아 활동을 쉽게 기록하세요.">
+      <meta name="keywords" content="육아앱, 수유기록, 수면기록, 아기성장, 육아일기">
+                                                                                
+      <!-- Open Graph -->                                                       
+      <meta property="og:title" content="아이좋아 - 초보맘 육아 필수템">        
+      <meta property="og:description" content="수유, 수면, 기저귀 등 모든 육아 활동을 쉽게 기록하세요.">
+      <meta property="og:type" content="website">                               
+                                                                                
+      <!-- App Links -->                                                        
+      <meta property="al:ios:app_store_id" content="6756014147">                
+      <meta property="al:ios:app_name" content="아이좋아">                      
+      <meta property="al:android:package" content="com.likekids.likekids">      
+      <meta property="al:android:app_name" content="아이좋아">                  
+                                                                                
+      <style>                                                                   
+          * {                                                                   
+              margin: 0;                                                        
+              padding: 0;                                                       
+              box-sizing: border-box;                                           
+          }                                                                     
+                                                                                
+          body {                                                                
+              font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+              background: linear-gradient(135deg, #FFF8F3 0%, #FFE4EC 100%);    
+              min-height: 100vh;                                                
+              display: flex;                                                    
+              flex-direction: column;                                           
+              align-items: center;                                              
+              justify-content: center;                                          
+              padding: 20px;                                                    
+          }                                                                     
+                                                                                
+          .container {                                                          
+              text-align: center;                                               
+              max-width: 400px;                                                 
+          }                                                                     
+                                                                                
+          .logo {                                                               
+              font-size: 80px;                                                  
+              margin-bottom: 20px;                                              
+              animation: bounce 2s infinite;                                    
+          }                                                                     
+                                                                                
+          @keyframes bounce {                                                   
+              0%, 100% { transform: translateY(0); }                            
+              50% { transform: translateY(-10px); }                             
+          }                                                                     
+                                                                                
+          h1 {                                                                  
+              font-size: 32px;                                                  
+              font-weight: 800;                                                 
+              color: #4A4A4A;                                                   
+              margin-bottom: 12px;                                              
+          }                                                                     
+                                                                                
+          .subtitle {                                                           
+              font-size: 18px;                                                  
+              color: #8B8B8B;                                                   
+              margin-bottom: 40px;                                              
+          }                                                                     
+                                                                                
+          .loading {                                                            
+              font-size: 16px;                                                  
+              color: #FFB3D9;                                                   
+              margin-bottom: 30px;                                              
+          }                                                                     
+                                                                                
+          .store-buttons {                                                      
+              display: flex;                                                    
+              flex-direction: column;                                           
+              gap: 16px;                                                        
+          }                                                                     
+                                                                                
+          .store-btn {                                                          
+              display: flex;                                                    
+              align-items: center;                                              
+              justify-content: center;                                          
+              gap: 12px;                                                        
+              padding: 16px 32px;                                               
+              border-radius: 16px;                                              
+              text-decoration: none;                                            
+              font-size: 18px;                                                  
+              font-weight: 600;                                                 
+              transition: transform 0.2s, box-shadow 0.2s;                      
+          }                                                                     
+                                                                                
+          .store-btn:hover {                                                    
+              transform: translateY(-4px);                                      
+              box-shadow: 0 8px 24px rgba(0,0,0,0.15);                          
+          }                                                                     
+                                                                                
+          .store-btn.ios {                                                      
+              background: linear-gradient(135deg, #000000 0%, #333333 100%);    
+              color: white;                                                     
+          }                                                                     
+                                                                                
+          .store-btn.android {                                                  
+              background: linear-gradient(135deg, #34A853 0%, #4CAF50 100%);    
+              color: white;                                                     
+          }                                                                     
+                                                                                
+          .store-icon {                                                         
+              font-size: 24px;                                                  
+          }                                                                     
+                                                                                
+          .features {                                                           
+              margin-top: 50px;                                                 
+              text-align: left;                                                 
+              background: white;                                                
+              padding: 24px;                                                    
+              border-radius: 20px;                                              
+              box-shadow: 0 4px 16px rgba(0,0,0,0.08);                          
+          }                                                                     
+                                                                                
+          .features h2 {                                                        
+              font-size: 20px;                                                  
+              color: #4A4A4A;                                                   
+              margin-bottom: 16px;                                              
+          }                                                                     
+                                                                                
+          .feature-item {                                                       
+              display: flex;                                                    
+              align-items: center;                                              
+              gap: 12px;                                                        
+              margin-bottom: 12px;                                              
+              font-size: 16px;                                                  
+              color: #4A4A4A;                                                   
+          }                                                                     
+                                                                                
+          .feature-icon {                                                       
+              font-size: 20px;                                                  
+          }                                                                     
+      </style>                                                                  
+  </head>                                                                       
+  <body>                                                                        
+      <div class="container">                                                   
+          <div class="logo">👶</div>                                            
+          <h1>아이좋아</h1>                                                     
+          <p class="subtitle">초보맘을 위한 육아 필수템</p>                     
+                                                                                
+          <p class="loading" id="loading">스토어로 이동 중...</p>               
+                                                                                
+          <div class="store-buttons" id="store-buttons" style="display: none;"> 
+              <a href="https://apps.apple.com/kr/app/%EC%95%84%EC%9D%B4%EC%A2%8B%EC%95%84-%EC%B4%88%EB%B3%B4%EB%A7%98-%EC%9C%A1%EC%95%84-%ED%95%84%EC%88%98%ED%85%9C/id6756014147" 
+                 class="store-btn ios">                                         
+                  <span class="store-icon"></span>                              
+                  App Store에서 다운로드                                        
+              </a>                                                              
+              <a href="https://play.google.com/store/apps/details?id=com.likekids.likekids" 
+                 class="store-btn android">                                     
+                  <span class="store-icon">▶</span>                             
+                  Google Play에서 다운로드                                      
+              </a>                                                              
+          </div>                                                                
+                                                                                
+          <div class="features">                                                
+              <h2>주요 기능</h2>                                                
+              <div class="feature-item">                                        
+                  <span class="feature-icon">🍼</span>                          
+                  <span>수유 기록 (모유/분유/이유식)</span>                     
+              </div>                                                            
+              <div class="feature-item">                                        
+                  <span class="feature-icon">😴</span>                          
+                  <span>수면 패턴 분석</span>                                   
+              </div>                                                            
+              <div class="feature-item">                                        
+                  <span class="feature-icon">👶</span>                          
+                  <span>기저귀 교체 기록</span>                                 
+              </div>                                                            
+              <div class="feature-item">                                        
+                  <span class="feature-icon">📊</span>                          
+                  <span>성장 통계 & 그래프</span>                               
+              </div>                                                            
+              <div class="feature-item">                                        
+                  <span class="feature-icon">🌙</span>                          
+                  <span>다크모드 지원</span>                                    
+              </div>                                                            
+          </div>                                                                
+      </div>                                                                    
+                                                                                
+      <script>                                                                  
+          (function() {                                                         
+              const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+              const loadingEl = document.getElementById('loading');             
+              const buttonsEl = document.getElementById('store-buttons');       
+                                                                                
+              const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.likekids.likekids';
+              const APP_STORE_URL = 'https://apps.apple.com/kr/app/%EC%95%84%EC%9D%B4%EC%A2%8B%EC%95%84-%EC%B4%88%EB%B3%B4%EB%A7%98-%EC%9C%A1%EC%95%84-%ED%95%84%EC%88%98%ED%85%9C/id6756014147';
+                                                                                
+              // iOS 감지 (iPhone, iPad, iPod)                                  
+              function isIOS() {                                                
+                  return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+              }                                                                 
+                                                                                
+              // Android 감지                                                   
+              function isAndroid() {                                            
+                  return /android/i.test(userAgent);                            
+              }                                                                 
+                                                                                
+              // 모바일 기기 감지                                               
+              function isMobile() {                                             
+                  return isIOS() || isAndroid();                                
+              }                                                                 
+                                                                                
+              // 리다이렉트 실행                                                
+              function redirect(url) {                                          
+                  window.location.href = url;                                   
+              }                                                                 
+                                                                                
+              // 버튼 표시 (데스크톱 또는 리다이렉트 실패 시)                   
+              function showButtons() {                                          
+                  loadingEl.style.display = 'none';                             
+                  buttonsEl.style.display = 'flex';                             
+              }                                                                 
+                                                                                
+              // 메인 로직                                                      
+              if (isIOS()) {                                                    
+                  loadingEl.textContent = 'App Store로 이동 중...';             
+                  setTimeout(function() {                                       
+                      redirect(APP_STORE_URL);                                  
+                  }, 500);                                                      
+                  // 리다이렉트 실패 대비                                       
+                  setTimeout(showButtons, 3000);                                
+              } else if (isAndroid()) {                                         
+                  loadingEl.textContent = 'Google Play로 이동 중...';           
+                  setTimeout(function() {                                       
+                      redirect(PLAY_STORE_URL);                                 
+                  }, 500);                                                      
+                  // 리다이렉트 실패 대비                                       
+                  setTimeout(showButtons, 3000);                                
+              } else {                                                          
+                  // 데스크톱 또는 기타 기기                                    
+                  loadingEl.textContent = '앱을 다운로드하세요';                
+                  showButtons();                                                
+              }                                                                 
+          })();                                                                 
+      </script>                                                                 
+  </body>                                                                       
+  </html>                  
