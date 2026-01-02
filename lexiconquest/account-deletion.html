@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계정 삭제 안내 - Lexicon Quest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+
+        .section p, .section li {
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .step-box {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .step-box strong {
+            color: #667eea;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .contact {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗑️ 계정 삭제 안내</h1>
+            <p><strong>Lexicon Quest</strong> - 개발자: pakss3</p>
+        </div>
+
+        <!-- 1. 개요 -->
+        <div class="section">
+            <h2>📋 개요</h2>
+            <p>
+                Lexicon Quest는 사용자의 개인정보 보호를 최우선으로 생각합니다.
+                언제든지 계정 및 관련된 모든 데이터를 삭제할 수 있는 권리가 있습니다.
+            </p>
+        </div>
+
+        <!-- 2. 계정 삭제 절차 -->
+        <div class="section">
+            <h2>🔧 계정 삭제 방법</h2>
+
+            <h3>방법 1: 앱 내에서 직접 삭제 (권장)</h3>
+            <div class="step-box">
+                <strong>1단계:</strong> Lexicon Quest 앱 실행 후 로그인
+            </div>
+            <div class="step-box">
+                <strong>2단계:</strong> 홈 화면 우측 상단 ⚙️ (설정) 아이콘 클릭
+            </div>
+            <div class="step-box">
+                <strong>3단계:</strong> "계정" 섹션에서 <span style="color: red;">🗑️ "계정 삭제"</span> 버튼 클릭
+            </div>
+            <div class="step-box">
+                <strong>4단계:</strong> 확인 대화상자에서 <strong>"계정을 영구적으로 삭제하시겠습니까?"</strong> 읽기
+            </div>
+            <div class="step-box">
+                <strong>5단계:</strong> <span style="color: red;">"삭제"</span> 버튼 클릭하여 최종 확인
+            </div>
+
+            <h3>방법 2: 이메일로 삭제 요청</h3>
+            <p>앱에 접속할 수 없는 경우, 아래 이메일로 삭제 요청을 보내주세요:</p>
+            <div class="info-box">
+                <strong>📧 이메일 주소:</strong> pakss894@gmail.com<br>
+                <strong>✉️ 제목:</strong> [Lexicon Quest] 계정 삭제 요청<br>
+                <strong>📝 내용 포함 사항:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>가입 시 사용한 이메일 주소</li>
+                    <li>사용자명 (있는 경우)</li>
+                    <li>삭제 요청 사유 (선택사항)</li>
+                </ul>
+            </div>
+            <p style="color: #666; font-size: 14px;">
+                ⏱️ 이메일 삭제 요청은 영업일 기준 <strong>7일 이내</strong>에 처리됩니다.
+            </p>
+        </div>
+
+        <!-- 3. 삭제되는 데이터 -->
+        <div class="section">
+            <h2>📂 삭제되는 데이터 유형</h2>
+            <p>계정 삭제 시 다음 모든 데이터가 <strong>영구적으로 삭제</strong>됩니다:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>데이터 유형</th>
+                        <th>설명</th>
+                        <th>삭제 시점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>계정 정보</strong></td>
+                        <td>이메일 주소, 사용자명, 프로필 정보</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>학습 기록</strong></td>
+                        <td>플래시카드 학습 내역, 퀴즈 점수, 복습 스케줄</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>게임 데이터</strong></td>
+                        <td>미니게임 점수, XP, 레벨, 배지, 리더보드 순위</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>오답 노트</strong></td>
+                        <td>틀린 문제 기록, 약점 분석 데이터</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>통계 데이터</strong></td>
+                        <td>일일/주간/월간 학습 통계, 스트릭 기록</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>로컬 캐시</strong></td>
+                        <td>기기에 저장된 Hive 데이터베이스</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>클라우드 백업</strong></td>
+                        <td>Firestore에 저장된 모든 사용자 데이터</td>
+                        <td>즉시 삭제</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>⚠️ 주의사항</strong>
+                <p>
+                    계정 삭제 후에는 <strong>복구가 불가능</strong>합니다.
+                    삭제하기 전에 필요한 데이터를 백업하시기 바랍니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. 데이터 보관 기간 -->
+        <div class="section">
+            <h2>⏳ 데이터 보관 기간</h2>
+            <div class="info-box">
+                <strong>✅ 즉시 삭제 정책</strong>
+                <p>
+                    Lexicon Quest는 계정 삭제 요청 시 모든 개인 데이터를 <strong>즉시 영구 삭제</strong>합니다.
+                    별도의 보관 기간 없이 Firebase Authentication 및 Firestore에서 완전히 제거됩니다.
+                </p>
+            </div>
+
+            <h3>예외 사항</h3>
+            <ul>
+                <li>
+                    <strong>법적 의무:</strong> 관련 법률에 따라 보관이 의무화된 경우 (예: 전자상거래법)
+                    <br><span style="color: #666; font-size: 14px;">→ 현재 Lexicon Quest는 해당 사항 없음</span>
+                </li>
+                <li>
+                    <strong>익명화 통계:</strong> 개인 식별이 불가능하게 익명화된 학습 통계
+                    <br><span style="color: #666; font-size: 14px;">→ 서비스 개선 목적으로만 사용 (개인정보 미포함)</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 5. 부분 삭제 옵션 -->
+        <div class="section">
+            <h2>🔄 계정 유지하면서 데이터만 삭제하기</h2>
+            <p>
+                계정을 삭제하지 않고도 학습 데이터를 초기화할 수 있습니다:
+            </p>
+
+            <h3>학습 기록 초기화 방법</h3>
+            <div class="step-box">
+                <strong>1단계:</strong> 앱 설정 (⚙️) → "계정" 섹션
+            </div>
+            <div class="step-box">
+                <strong>2단계:</strong> "학습 기록 초기화" 버튼 클릭
+            </div>
+            <div class="step-box">
+                <strong>3단계:</strong> 확인 후 학습 데이터만 삭제 (계정은 유지)
+            </div>
+
+            <div class="info-box">
+                <strong>📌 부분 삭제 시 유지되는 항목</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>계정 정보 (이메일, 사용자명)</li>
+                    <li>로그인 인증 정보</li>
+                </ul>
+                <strong>📌 부분 삭제 시 삭제되는 항목</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>학습 기록, XP/레벨, 배지</li>
+                    <li>오답 노트, 통계 데이터</li>
+                    <li>미니게임 점수</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6. 문의 -->
+        <div class="contact">
+            <h2 style="color: #667eea; margin-bottom: 15px;">📞 문의하기</h2>
+            <p>
+                계정 삭제 관련 문의사항이 있으시면 언제든지 연락해 주세요.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>이메일:</strong> <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/pakss3/lexiconquest" target="_blank">https://github.com/pakss3/lexiconquest</a>
+            </p>
+        </div>
+
+        <!-- 7. Footer -->
+        <div class="footer">
+            <p>
+                <strong>Lexicon Quest</strong> v1.0.0<br>
+                개발자: pakss3 | 이메일: pakss894@gmail.com
+            </p>
+            <p style="margin-top: 10px;">
+                <a href="https://pakss3.github.io/lexiconquest/privacy-policy.html" style="color: #667eea;">개인정보처리방침</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px; color: #999;">
+                최종 업데이트: 2025년 1월 2일
+            </p>
+        </div>
+    </div>
+</body>
+</html>
