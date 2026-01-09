@@ -1,1 +1,20 @@
+# Developer: Pakss
+# This app-ads.txt is shared across multiple apps under the same AdMob publisher account.
+
+# App: Lexicon Quest (iOS)
+# App Store ID: 6757364582
+# Bundle ID: com.pakss.lexiconquest
+
+# App: Lexicon Quest (Android)
+# Package Name: com.pakss.lexiconquest
+
+# App: 아이좋아 - 스마트 육아
+# Package Name: com.likekids.likekids
+
+# App: 아이좋아 - 초보맘
+# App Store ID: 6756014147
+
+# App: 신박한 운세
+# Package Name: com.mystical.fortune
+
 google.com, pub-5779545047255507, DIRECT, f08c47fec0942fa0
