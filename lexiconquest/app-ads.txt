@@ -1,6 +1,1 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="refresh" content="0; url=https://pakss3.github.io/app-ads.txt">
-</head>
-</html>
+google.com, pub-5779545047255507, DIRECT, f08c47fec0942fa0
