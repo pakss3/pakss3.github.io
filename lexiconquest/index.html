@@ -3,495 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lexicon Quest - 게임처럼 즐기는 영단어 학습! SRS 알고리즘으로 효과적인 암기">
-    <meta name="keywords" content="영단어, 단어장, 학습, 교육, 게임, SRS, 플래시카드, 초등학생, 중학생, 고등학생">
+    <meta name="description" content="Lexicon Quest - Learn vocabulary through RPG battles! Master words by fighting monsters">
+    <meta name="keywords" content="vocabulary, word learning, education, game, RPG, flashcard, battle">
     <meta name="author" content="pakss3">
-    <title>Lexicon Quest - 게임처럼 즐기는 영단어 학습</title>
+    <title>Lexicon Quest - Vocabulary RPG Battle</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", "Noto Sans Devanagari", sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        header { background: var(--gradient); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; cursor: pointer; }
+        .nav-links a:hover { opacity: 0.8; }
 
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+        /* Language Selector */
+        .lang-selector { position: relative; }
+        .lang-btn { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .lang-btn:hover { background: rgba(255,255,255,0.3); }
+        .lang-dropdown { position: absolute; top: 100%; right: 0; margin-top: 8px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); min-width: 160px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s; z-index: 1001; }
+        .lang-selector:hover .lang-dropdown, .lang-dropdown:hover { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-dropdown button { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #333; background: none; border: none; width: 100%; text-align: left; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+        .lang-dropdown button:first-child { border-radius: 12px 12px 0 0; }
+        .lang-dropdown button:last-child { border-radius: 0 0 12px 12px; }
+        .lang-dropdown button:hover { background: #f0f0f0; }
+        .lang-dropdown button.active { background: var(--gradient); color: white; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* 헤더 */
-        header {
-            background: var(--gradient);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* 히어로 섹션 */
-        .hero {
-            background: var(--gradient);
-            color: white;
-            padding: 150px 20px 100px;
-            text-align: center;
-            margin-top: 70px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .download-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* 섹션 공통 */
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 기능 카드 */
-        .features {
-            background: #f8f9fa;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* CTA 섹션 */
-        .cta {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-        }
-
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .cta p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 푸터 */
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 60px 20px 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #cbd5e0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid #4a5568;
-            text-align: center;
-            color: #cbd5e0;
-            font-size: 14px;
-        }
-
-        /* 애니메이션 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 반응형 */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .nav-links {
-                gap: 15px;
-                font-size: 14px;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* 스크롤 애니메이션 */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .hero { background: var(--gradient); color: white; padding: 150px 20px 100px; text-align: center; margin-top: 70px; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; animation: fadeInUp 0.8s ease-out; }
+        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.95; animation: fadeInUp 0.8s ease-out 0.2s backwards; }
+        .download-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.8s ease-out 0.4s backwards; }
+        .btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary { background: white; color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-outline { background: transparent; color: white; border: 2px solid white; }
+        .btn-outline:hover { background: white; color: var(--primary); }
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 36px; margin-bottom: 20px; color: var(--primary); }
+        .section-subtitle { text-align: center; font-size: 18px; color: #666; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .features { background: #f8f9fa; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2); }
+        .feature-icon { font-size: 48px; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 22px; margin-bottom: 15px; color: var(--primary); }
+        .feature-card p { color: #666; line-height: 1.8; }
+        .cta { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); }
+        .cta h2 { font-size: 36px; margin-bottom: 20px; color: var(--primary); }
+        .cta p { font-size: 18px; color: #666; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        footer { background: #2d3748; color: white; padding: 60px 20px 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-section h3 { margin-bottom: 20px; color: var(--primary); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #cbd5e0; text-decoration: none; transition: color 0.3s; cursor: pointer; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid #4a5568; text-align: center; color: #cbd5e0; font-size: 14px; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 28px; } .hero p { font-size: 16px; } .section-title { font-size: 26px; } .nav-links { gap: 10px; font-size: 14px; } .feature-grid { grid-template-columns: 1fr; } .lang-btn span.lang-name { display: none; } .nav-links .hide-mobile { display: none; } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
-    <!-- 헤더 -->
     <header>
         <nav>
-            <div class="logo">
-                <span>🎮</span>
-                <span>Lexicon Quest</span>
-            </div>
+            <div class="logo"><span>⚔️</span><span>Lexicon Quest</span></div>
             <ul class="nav-links">
-                <li><a href="#features">주요 기능</a></li>
-                <li><a href="#download">다운로드</a></li>
-                <li><a href="privacy-policy.html">개인정보처리방침</a></li>
+                <li><a onclick="scrollToSection('features')" data-i18n="nav.features">주요 기능</a></li>
+                <li><a onclick="scrollToSection('download')" data-i18n="nav.download">다운로드</a></li>
+                <li class="hide-mobile"><a href="privacy-policy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
+                <li class="lang-selector">
+                    <button class="lang-btn">
+                        <span>🌐</span>
+                        <span class="lang-name" id="currentLangName">한국어</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button onclick="setLanguage('ko')" data-lang="ko" class="active">🇰🇷 한국어</button>
+                        <button onclick="setLanguage('en')" data-lang="en">🇺🇸 English</button>
+                        <button onclick="setLanguage('ja')" data-lang="ja">🇯🇵 日本語</button>
+                        <button onclick="setLanguage('zh')" data-lang="zh">🇹🇼 繁體中文</button>
+                        <button onclick="setLanguage('hi')" data-lang="hi">🇮🇳 हिन्दी</button>
+                        <button onclick="setLanguage('es')" data-lang="es">🇪🇸 Español</button>
+                        <button onclick="setLanguage('vi')" data-lang="vi">🇻🇳 Tiếng Việt</button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- 히어로 섹션 -->
     <section class="hero">
-        <h1>🎮 게임처럼 즐기는 영단어 학습</h1>
-        <p>SRS 알고리즘과 게이미피케이션으로 효과적이고 재미있게 단어를 암기하세요!</p>
+        <h1 data-i18n="hero.title">⚔️ 몬스터와 배틀하며 영단어 정복!</h1>
+        <p data-i18n="hero.subtitle">지루한 단어장은 그만! RPG 배틀로 즐기며 영단어를 마스터하세요</p>
         <div class="download-buttons">
-            <a href="#download" class="btn btn-primary">
-                <span>📱</span>
-                <span>지금 시작하기</span>
-            </a>
-            <a href="#features" class="btn btn-outline">
-                <span>✨</span>
-                <span>기능 둘러보기</span>
-            </a>
+            <a onclick="scrollToSection('download')" class="btn btn-primary"><span>📱</span><span data-i18n="hero.cta1">지금 시작하기</span></a>
+            <a onclick="scrollToSection('features')" class="btn btn-outline"><span>✨</span><span data-i18n="hero.cta2">기능 둘러보기</span></a>
         </div>
     </section>
 
-    <!-- 주요 기능 -->
     <section id="features" class="features">
-        <h2 class="section-title">주요 기능</h2>
-        <p class="section-subtitle">Lexicon Quest만의 특별한 학습 경험</p>
-
+        <h2 class="section-title" data-i18n="features.title">주요 기능</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">Lexicon Quest만의 특별한 학습 경험</p>
         <div class="feature-grid">
             <div class="feature-card fade-in">
-                <div class="feature-icon">🧠</div>
-                <h3>SRS 알고리즘</h3>
-                <p>과학적으로 검증된 간격 반복 학습 시스템으로 장기 기억을 효과적으로 형성합니다.</p>
+                <div class="feature-icon">🗺️</div>
+                <h3 data-i18n="features.f1.title">월드맵 어드벤처</h3>
+                <p data-i18n="features.f1.desc">5개 대륙, 120개 스테이지. 초심자의 숲에서 혼돈의 도서관까지 보스를 격파하며 모험하세요.</p>
             </div>
-
             <div class="feature-card fade-in">
-                <div class="feature-icon">🎯</div>
-                <h3>맞춤형 단어장</h3>
-                <p>초등, 중등, 고등 학년별 맞춤 단어장과 수능/토익/토플 등 시험 대비 단어장을 제공합니다.</p>
+                <div class="feature-icon">⚔️</div>
+                <h3 data-i18n="features.f2.title">배틀 시스템</h3>
+                <p data-i18n="features.f2.desc">정답은 강력한 공격, 오답은 반격! 크리티컬 판정과 콤보 시스템으로 전략적 플레이를 즐기세요.</p>
             </div>
-
             <div class="feature-card fade-in">
                 <div class="feature-icon">🎮</div>
-                <h3>재미있는 미니게임</h3>
-                <p>카드 뒤집기, 워드 레인, 4지선다 등 다양한 미니게임으로 지루하지 않게 학습하세요.</p>
+                <h3 data-i18n="features.f3.title">다양한 게임 모드</h3>
+                <p data-i18n="features.f3.desc">플래시카드 배틀, 4지선다 퀴즈, 워드레인, 카드 뒤집기 등 다양한 미니게임으로 지루할 틈이 없어요.</p>
             </div>
-
             <div class="feature-card fade-in">
-                <div class="feature-icon">📊</div>
-                <h3>상세한 학습 통계</h3>
-                <p>일일/주간/월간 학습 기록과 정확도, 약점 분석을 통해 학습 효과를 극대화합니다.</p>
+                <div class="feature-icon">👤</div>
+                <h3 data-i18n="features.f4.title">캐릭터 육성</h3>
+                <p data-i18n="features.f4.desc">8종 캐릭터 선택 & 커스터마이징. 레벨 1에서 100까지 함께 성장하세요.</p>
             </div>
-
             <div class="feature-card fade-in">
-                <div class="feature-icon">🎤</div>
-                <h3>원어민 발음</h3>
-                <p>TTS 음성 지원으로 정확한 발음을 듣고 따라하며 스피킹 실력도 향상시키세요.</p>
+                <div class="feature-icon">🏆</div>
+                <h3 data-i18n="features.f5.title">주간 리그</h3>
+                <p data-i18n="features.f5.desc">브론즈부터 챔피언까지 6개 티어. 매주 승급전에 도전하고 친구와 경쟁하세요.</p>
             </div>
-
             <div class="feature-card fade-in">
-                <div class="feature-icon">📴</div>
-                <h3>오프라인 학습</h3>
-                <p>인터넷 연결 없이도 모든 기능을 사용할 수 있어 언제 어디서나 학습 가능합니다.</p>
+                <div class="feature-icon">🧠</div>
+                <h3 data-i18n="features.f6.title">스마트 복습</h3>
+                <p data-i18n="features.f6.desc">앱이 알아서 복습 타이밍을 알려줍니다. 까먹기 직전에 다시 출제해서 장기 기억으로 전환!</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
     <section id="download" class="cta">
-        <h2>지금 바로 시작하세요!</h2>
-        <p>무료로 다운로드하고 첫 번째 단어를 학습해보세요 🚀</p>
-
+        <h2 data-i18n="cta.title">지금 바로 시작하세요!</h2>
+        <p data-i18n="cta.subtitle">모든 기능 100% 무료. 학습 중 광고 없음. 회원가입 없이 바로 시작!</p>
         <div class="download-buttons">
-            <a href="https://play.google.com/store" class="btn btn-primary">
-                <span>📱</span>
-                <span>Google Play</span>
-            </a>
-            <a href="https://apps.apple.com" class="btn btn-outline">
-                <span>🍎</span>
-                <span>App Store</span>
-            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.lexiconquest.app" class="btn btn-primary"><span>📱</span><span>Google Play</span></a>
+            <a href="https://apps.apple.com/app/lexicon-quest" class="btn btn-outline"><span>🍎</span><span>App Store</span></a>
         </div>
-
-        <p style="margin-top: 30px; font-size: 14px; color: #666;">
-            iOS 14.0+ / Android 8.0+ 지원
-        </p>
+        <p style="margin-top: 30px; font-size: 14px; color: #666;" data-i18n="cta.support">iOS 14.0+ / Android 8.0+ 지원 | 오프라인 플레이 가능</p>
     </section>
 
-    <!-- 푸터 -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Lexicon Quest</h3>
-                <p style="color: #cbd5e0; line-height: 1.8;">
-                    게임처럼 즐기는 영단어 학습 앱<br>
-                    SRS 알고리즘과 게이미피케이션으로<br>
-                    효과적이고 재미있게 학습하세요!
-                </p>
+                <p style="color: #cbd5e0; line-height: 1.8;" data-i18n="footer.desc">몬스터와 배틀하며 영단어 정복!<br>RPG 게임처럼 즐기면서<br>효과적으로 단어를 암기하세요.</p>
             </div>
-
             <div class="footer-section">
-                <h3>빠른 링크</h3>
+                <h3 data-i18n="footer.links">빠른 링크</h3>
                 <ul class="footer-links">
-                    <li><a href="#features">주요 기능</a></li>
-                    <li><a href="#download">다운로드</a></li>
-                    <li><a href="privacy-policy.html">개인정보처리방침</a></li>
-                    <li><a href="account-deletion.html">계정 삭제</a></li>
+                    <li><a onclick="scrollToSection('features')" data-i18n="nav.features">주요 기능</a></li>
+                    <li><a onclick="scrollToSection('download')" data-i18n="nav.download">다운로드</a></li>
+                    <li><a href="privacy-policy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
+                    <li><a href="account-deletion.html" data-i18n="footer.delete">계정 삭제</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
-                <h3>개발자</h3>
-                <p style="color: #cbd5e0; margin-bottom: 15px;">
-                    <strong>pakss3</strong><br>
-                    📧 pakss894@gmail.com
-                </p>
-                <p style="color: #cbd5e0; font-size: 14px;">
-                    Made with ❤️ in Korea
-                </p>
+                <h3 data-i18n="footer.developer">개발자</h3>
+                <p style="color: #cbd5e0; margin-bottom: 15px;"><strong>pakss3</strong><br>📧 pakss894@gmail.com</p>
+                <p style="color: #cbd5e0; font-size: 14px;">Made with ❤️ in Korea</p>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>© 2025 Lexicon Quest. All rights reserved. | Version 1.0.0</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 Lexicon Quest. All rights reserved. | Version 1.4.0</p></div>
     </footer>
 
-    <!-- 스크롤 애니메이션 스크립트 -->
     <script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+        // Translations
+        const translations = {
+            ko: {
+                langName: "한국어",
+                "nav.features": "주요 기능",
+                "nav.download": "다운로드",
+                "nav.privacy": "개인정보처리방침",
+                "hero.title": "⚔️ 몬스터와 배틀하며 영단어 정복!",
+                "hero.subtitle": "지루한 단어장은 그만! RPG 배틀로 즐기며 영단어를 마스터하세요",
+                "hero.cta1": "지금 시작하기",
+                "hero.cta2": "기능 둘러보기",
+                "features.title": "주요 기능",
+                "features.subtitle": "Lexicon Quest만의 특별한 학습 경험",
+                "features.f1.title": "월드맵 어드벤처",
+                "features.f1.desc": "5개 대륙, 120개 스테이지. 초심자의 숲에서 혼돈의 도서관까지 보스를 격파하며 모험하세요.",
+                "features.f2.title": "배틀 시스템",
+                "features.f2.desc": "정답은 강력한 공격, 오답은 반격! 크리티컬 판정과 콤보 시스템으로 전략적 플레이를 즐기세요.",
+                "features.f3.title": "다양한 게임 모드",
+                "features.f3.desc": "플래시카드 배틀, 4지선다 퀴즈, 워드레인, 카드 뒤집기 등 다양한 미니게임으로 지루할 틈이 없어요.",
+                "features.f4.title": "캐릭터 육성",
+                "features.f4.desc": "8종 캐릭터 선택 & 커스터마이징. 레벨 1에서 100까지 함께 성장하세요.",
+                "features.f5.title": "주간 리그",
+                "features.f5.desc": "브론즈부터 챔피언까지 6개 티어. 매주 승급전에 도전하고 친구와 경쟁하세요.",
+                "features.f6.title": "스마트 복습",
+                "features.f6.desc": "앱이 알아서 복습 타이밍을 알려줍니다. 까먹기 직전에 다시 출제해서 장기 기억으로 전환!",
+                "cta.title": "지금 바로 시작하세요!",
+                "cta.subtitle": "모든 기능 100% 무료. 학습 중 광고 없음. 회원가입 없이 바로 시작!",
+                "cta.support": "iOS 14.0+ / Android 8.0+ 지원 | 오프라인 플레이 가능",
+                "footer.desc": "몬스터와 배틀하며 영단어 정복!<br>RPG 게임처럼 즐기면서<br>효과적으로 단어를 암기하세요.",
+                "footer.links": "빠른 링크",
+                "footer.delete": "계정 삭제",
+                "footer.developer": "개발자"
+            },
+            en: {
+                langName: "English",
+                "nav.features": "Features",
+                "nav.download": "Download",
+                "nav.privacy": "Privacy Policy",
+                "hero.title": "⚔️ Battle Monsters, Master Vocabulary!",
+                "hero.subtitle": "Boring flashcards are over! Learn vocabulary through epic RPG battles",
+                "hero.cta1": "Get Started",
+                "hero.cta2": "Explore Features",
+                "features.title": "Key Features",
+                "features.subtitle": "A unique learning experience only in Lexicon Quest",
+                "features.f1.title": "World Map Adventure",
+                "features.f1.desc": "5 continents, 120 stages. Journey from Beginner's Forest to the Library of Chaos, defeating bosses along the way.",
+                "features.f2.title": "Battle System",
+                "features.f2.desc": "Correct = powerful attack, Wrong = counterattack! Enjoy strategic play with critical hits and combo system.",
+                "features.f3.title": "Various Game Modes",
+                "features.f3.desc": "Flashcard battles, multiple choice quizzes, Word Rain, card matching - never a dull moment!",
+                "features.f4.title": "Character Growth",
+                "features.f4.desc": "Choose from 8 characters & customize. Grow together from level 1 to 100.",
+                "features.f5.title": "Weekly League",
+                "features.f5.desc": "6 tiers from Bronze to Champion. Challenge weekly promotions and compete with friends.",
+                "features.f6.title": "Smart Review",
+                "features.f6.desc": "The app knows when to review. Words are re-tested right before you forget - converting to long-term memory!",
+                "cta.title": "Start Now!",
+                "cta.subtitle": "100% free features. No ads during learning. Start immediately without signup!",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | Offline play available",
+                "footer.desc": "Battle monsters and conquer vocabulary!<br>Learn effectively while having fun<br>with RPG-style gameplay.",
+                "footer.links": "Quick Links",
+                "footer.delete": "Delete Account",
+                "footer.developer": "Developer"
+            },
+            ja: {
+                langName: "日本語",
+                "nav.features": "機能",
+                "nav.download": "ダウンロード",
+                "nav.privacy": "プライバシーポリシー",
+                "hero.title": "⚔️ モンスターと戦って英単語征服！",
+                "hero.subtitle": "つまらない単語帳はもう終わり！RPGバトルで楽しく英単語をマスター",
+                "hero.cta1": "今すぐ始める",
+                "hero.cta2": "機能を見る",
+                "features.title": "主な機能",
+                "features.subtitle": "Lexicon Questだけの特別な学習体験",
+                "features.f1.title": "ワールドマップアドベンチャー",
+                "features.f1.desc": "5つの大陸、120のステージ。初心者の森から混沌の図書館まで、ボスを倒しながら冒険しよう。",
+                "features.f2.title": "バトルシステム",
+                "features.f2.desc": "正解＝強力な攻撃、不正解＝反撃！クリティカル判定とコンボシステムで戦略的プレイを楽しもう。",
+                "features.f3.title": "多様なゲームモード",
+                "features.f3.desc": "フラッシュカードバトル、4択クイズ、ワードレイン、カードマッチングなど、飽きのこないミニゲーム。",
+                "features.f4.title": "キャラクター育成",
+                "features.f4.desc": "8種類のキャラクター選択＆カスタマイズ。レベル1から100まで一緒に成長。",
+                "features.f5.title": "週間リーグ",
+                "features.f5.desc": "ブロンズからチャンピオンまで6つのティア。毎週昇格戦に挑戦し、友達と競争しよう。",
+                "features.f6.title": "スマート復習",
+                "features.f6.desc": "アプリが復習タイミングを教えてくれます。忘れる直前に再出題して長期記憶に変換！",
+                "cta.title": "今すぐ始めよう！",
+                "cta.subtitle": "全機能100%無料。学習中広告なし。会員登録なしですぐ開始！",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | オフラインプレイ可能",
+                "footer.desc": "モンスターと戦って英単語征服！<br>RPGゲームのように楽しみながら<br>効果的に単語を暗記しよう。",
+                "footer.links": "クイックリンク",
+                "footer.delete": "アカウント削除",
+                "footer.developer": "開発者"
+            },
+            zh: {
+                langName: "繁體中文",
+                "nav.features": "功能",
+                "nav.download": "下載",
+                "nav.privacy": "隱私政策",
+                "hero.title": "⚔️ 與怪物戰鬥征服英語單詞！",
+                "hero.subtitle": "無聊的單詞本已經結束！透過RPG戰鬥愉快地掌握英語單詞",
+                "hero.cta1": "立即開始",
+                "hero.cta2": "瀏覽功能",
+                "features.title": "主要功能",
+                "features.subtitle": "Lexicon Quest獨有的特別學習體驗",
+                "features.f1.title": "世界地圖冒險",
+                "features.f1.desc": "5個大陸，120個關卡。從初學者森林到混沌圖書館，打敗Boss展開冒險。",
+                "features.f2.title": "戰鬥系統",
+                "features.f2.desc": "正確答案=強力攻擊，錯誤答案=反擊！享受暴擊判定和連擊系統的策略玩法。",
+                "features.f3.title": "多樣遊戲模式",
+                "features.f3.desc": "閃卡戰鬥、四選一測驗、單詞雨、卡片配對等，多種小遊戲永不無聊。",
+                "features.f4.title": "角色培養",
+                "features.f4.desc": "8種角色選擇與自訂。從1級到100級一起成長。",
+                "features.f5.title": "週間聯賽",
+                "features.f5.desc": "從青銅到冠軍6個段位。每週挑戰晉級賽，與朋友競爭。",
+                "features.f6.title": "智能複習",
+                "features.f6.desc": "應用程式告訴你複習時機。在忘記之前重新出題，轉化為長期記憶！",
+                "cta.title": "立即開始！",
+                "cta.subtitle": "所有功能100%免費。學習中無廣告。無需註冊即可開始！",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | 支援離線遊玩",
+                "footer.desc": "與怪物戰鬥征服英語單詞！<br>像玩RPG遊戲一樣愉快地<br>有效記憶單詞。",
+                "footer.links": "快速連結",
+                "footer.delete": "刪除帳戶",
+                "footer.developer": "開發者"
+            },
+            hi: {
+                langName: "हिन्दी",
+                "nav.features": "विशेषताएं",
+                "nav.download": "डाउनलोड",
+                "nav.privacy": "गोपनीयता नीति",
+                "hero.title": "⚔️ राक्षसों से लड़कर अंग्रेजी शब्द जीतें!",
+                "hero.subtitle": "उबाऊ शब्दकोश बंद करो! RPG युद्ध से मज़े में अंग्रेजी शब्द सीखो",
+                "hero.cta1": "अभी शुरू करें",
+                "hero.cta2": "विशेषताएं देखें",
+                "features.title": "मुख्य विशेषताएं",
+                "features.subtitle": "Lexicon Quest का अनोखा सीखने का अनुभव",
+                "features.f1.title": "वर्ल्ड मैप एडवेंचर",
+                "features.f1.desc": "5 महाद्वीप, 120 स्टेज। शुरुआती जंगल से अराजकता की लाइब्रेरी तक, बॉस को हराकर साहसिक यात्रा करें।",
+                "features.f2.title": "युद्ध प्रणाली",
+                "features.f2.desc": "सही जवाब = शक्तिशाली हमला, गलत जवाब = पलटवार! क्रिटिकल हिट और कॉम्बो सिस्टम के साथ रणनीतिक खेल।",
+                "features.f3.title": "विभिन्न गेम मोड",
+                "features.f3.desc": "फ्लैशकार्ड युद्ध, चार विकल्प क्विज़, वर्ड रेन, कार्ड मैचिंग - विभिन्न मिनी-गेम्स से कभी बोरियत नहीं।",
+                "features.f4.title": "कैरेक्टर ग्रोथ",
+                "features.f4.desc": "8 कैरेक्टर चुनें और कस्टमाइज़ करें। लेवल 1 से 100 तक साथ बढ़ें।",
+                "features.f5.title": "साप्ताहिक लीग",
+                "features.f5.desc": "ब्रॉन्ज़ से चैंपियन तक 6 टियर। हर हफ्ते प्रमोशन चैलेंज करें और दोस्तों से प्रतिस्पर्धा करें।",
+                "features.f6.title": "स्मार्ट रिव्यू",
+                "features.f6.desc": "ऐप आपको बताता है कब रिव्यू करना है। भूलने से पहले फिर से प्रश्न - लॉन्ग-टर्म मेमोरी में बदलें!",
+                "cta.title": "अभी शुरू करें!",
+                "cta.subtitle": "सभी फीचर्स 100% मुफ्त। सीखते समय कोई विज्ञापन नहीं। साइनअप के बिना तुरंत शुरू करें!",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | ऑफलाइन खेल उपलब्ध",
+                "footer.desc": "राक्षसों से लड़कर अंग्रेजी शब्द जीतें!<br>RPG गेम की तरह मज़े करते हुए<br>प्रभावी ढंग से शब्द याद करें।",
+                "footer.links": "त्वरित लिंक",
+                "footer.delete": "खाता हटाएं",
+                "footer.developer": "डेवलपर"
+            },
+            es: {
+                langName: "Español",
+                "nav.features": "Funciones",
+                "nav.download": "Descargar",
+                "nav.privacy": "Privacidad",
+                "hero.title": "⚔️ ¡Batalla monstruos y domina el vocabulario!",
+                "hero.subtitle": "¡Se acabaron las tarjetas aburridas! Aprende vocabulario con batallas RPG épicas",
+                "hero.cta1": "Comenzar ahora",
+                "hero.cta2": "Ver funciones",
+                "features.title": "Funciones principales",
+                "features.subtitle": "Una experiencia de aprendizaje única solo en Lexicon Quest",
+                "features.f1.title": "Aventura en el mapa mundial",
+                "features.f1.desc": "5 continentes, 120 etapas. Viaja desde el Bosque del Principiante hasta la Biblioteca del Caos derrotando jefes.",
+                "features.f2.title": "Sistema de batalla",
+                "features.f2.desc": "¡Correcto = ataque poderoso, incorrecto = contraataque! Disfruta del juego estratégico con golpes críticos y combos.",
+                "features.f3.title": "Varios modos de juego",
+                "features.f3.desc": "Batallas de tarjetas, cuestionarios, lluvia de palabras, emparejamiento - ¡nunca te aburrirás!",
+                "features.f4.title": "Crecimiento del personaje",
+                "features.f4.desc": "Elige entre 8 personajes y personaliza. Crece junto desde el nivel 1 hasta el 100.",
+                "features.f5.title": "Liga semanal",
+                "features.f5.desc": "6 niveles desde Bronce hasta Campeón. Desafía promociones semanales y compite con amigos.",
+                "features.f6.title": "Repaso inteligente",
+                "features.f6.desc": "La app sabe cuándo repasar. Las palabras se repiten justo antes de olvidarlas - ¡convirtiéndolas en memoria a largo plazo!",
+                "cta.title": "¡Empieza ahora!",
+                "cta.subtitle": "Funciones 100% gratis. Sin anuncios durante el aprendizaje. ¡Comienza sin registro!",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | Juego sin conexión disponible",
+                "footer.desc": "¡Batalla monstruos y conquista el vocabulario!<br>Aprende efectivamente mientras te diviertes<br>con el estilo de juego RPG.",
+                "footer.links": "Enlaces rápidos",
+                "footer.delete": "Eliminar cuenta",
+                "footer.developer": "Desarrollador"
+            },
+            vi: {
+                langName: "Tiếng Việt",
+                "nav.features": "Tính năng",
+                "nav.download": "Tải xuống",
+                "nav.privacy": "Quyền riêng tư",
+                "hero.title": "⚔️ Chiến đấu quái vật, chinh phục từ vựng!",
+                "hero.subtitle": "Thẻ ghi nhớ nhàm chán đã kết thúc! Học từ vựng qua trận chiến RPG sử thi",
+                "hero.cta1": "Bắt đầu ngay",
+                "hero.cta2": "Khám phá tính năng",
+                "features.title": "Tính năng chính",
+                "features.subtitle": "Trải nghiệm học tập độc đáo chỉ có tại Lexicon Quest",
+                "features.f1.title": "Phiêu lưu bản đồ thế giới",
+                "features.f1.desc": "5 châu lục, 120 màn chơi. Hành trình từ Rừng Người Mới đến Thư Viện Hỗn Loạn, đánh bại boss trên đường đi.",
+                "features.f2.title": "Hệ thống chiến đấu",
+                "features.f2.desc": "Đúng = tấn công mạnh, Sai = phản công! Tận hưởng chiến thuật với chí mạng và combo.",
+                "features.f3.title": "Nhiều chế độ chơi",
+                "features.f3.desc": "Chiến thẻ ghi nhớ, trắc nghiệm, mưa từ vựng, ghép thẻ - không bao giờ nhàm chán!",
+                "features.f4.title": "Phát triển nhân vật",
+                "features.f4.desc": "Chọn từ 8 nhân vật và tùy chỉnh. Cùng phát triển từ cấp 1 đến 100.",
+                "features.f5.title": "Giải đấu hàng tuần",
+                "features.f5.desc": "6 hạng từ Đồng đến Vô địch. Thách thức thăng hạng hàng tuần và cạnh tranh với bạn bè.",
+                "features.f6.title": "Ôn tập thông minh",
+                "features.f6.desc": "Ứng dụng biết khi nào cần ôn tập. Từ vựng được kiểm tra lại ngay trước khi bạn quên - chuyển đổi thành trí nhớ dài hạn!",
+                "cta.title": "Bắt đầu ngay!",
+                "cta.subtitle": "Tính năng 100% miễn phí. Không quảng cáo khi học. Bắt đầu ngay không cần đăng ký!",
+                "cta.support": "iOS 14.0+ / Android 8.0+ | Chơi ngoại tuyến có sẵn",
+                "footer.desc": "Chiến đấu quái vật và chinh phục từ vựng!<br>Học hiệu quả trong khi vui chơi<br>với lối chơi RPG.",
+                "footer.links": "Liên kết nhanh",
+                "footer.delete": "Xóa tài khoản",
+                "footer.developer": "Nhà phát triển"
+            }
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        let currentLang = localStorage.getItem('lang') || 'ko';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update all text elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
                 }
             });
-        }, observerOptions);
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+            // Update language button name
+            document.getElementById('currentLangName').textContent = translations[lang].langName;
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Update active state in dropdown
+            document.querySelectorAll('.lang-dropdown button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
                 }
             });
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+
+            // Intersection Observer for fade-in
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         });
     </script>
 </body>
