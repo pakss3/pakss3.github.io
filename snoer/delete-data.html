@@ -209,7 +209,7 @@
 `Please include the following:\n- Device (OS/model)\n- App version\n- What data to delete (sleep records, snoring events, audio files)\n\n---\n아래 정보를 포함해주세요:\n- 기기(OS/모델)\n- 앱 버전\n- 삭제 원하는 데이터(수면 기록/코골이 이벤트/오디오 등)\n`
     );
     document.getElementById("mailtoBtn").href = `mailto:${email}?subject=${subject}&body=${body}`;
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date.getFullYear;
 
     function showLang(mode) {
       const ko = document.querySelectorAll(".lang-ko");
