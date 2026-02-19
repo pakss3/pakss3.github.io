@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>개인정보처리방침 / Privacy Policy</title>
+  <meta name="description" content="SNOER 앱 개인정보처리방침 (Korean/English)" />
+  <style>
+    :root { color-scheme: light dark; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background:#060a16;
+      color:#eaf0ff;
+      line-height:1.6;
+    }
+    a{ color:#9ab6ff; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width: 980px; margin:0 auto; padding: 22px; }
+    header{ padding: 10px 0 6px; }
+    h1{ font-size: 22px; margin: 8px 0 6px; }
+    .muted{ opacity:0.8; font-size: 13px; }
+    .bar{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin: 12px 0 14px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: inherit;
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .btn.primary{
+      background:#4f7cff;
+      border-color:#4f7cff;
+      color:#071229;
+    }
+    .card{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 12px 0;
+      backdrop-filter: blur(10px);
+    }
+    h2{ font-size: 16px; margin: 0 0 10px; }
+    h3{ font-size: 14px; margin: 14px 0 6px; }
+    p, li{ font-size: 13.5px; opacity:0.95; }
+    ul{ margin: 6px 0 0 18px; }
+    .hr{ height: 1px; background: rgba(255,255,255,0.12); margin: 14px 0; }
+    .pill{
+      display:inline-block; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      font-size: 12px; opacity: 0.9;
+    }
+    .hide{ display:none !important; }
+    footer{ padding: 10px 0 28px; }
+    .notice{ font-size: 12px; opacity:0.75; }
+    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="pill">SNOER</span>
+      <h1>개인정보처리방침 / Privacy Policy</h1>
+      <div class="muted">
+        <div class="lang-ko">시행일: <strong><span id="effectiveKo">2026-02-19</span></strong> (예시)</div>
+        <div class="lang-en">Effective date: <strong><span id="effectiveEn">2026-02-19</span></strong> (example)</div>
+        <div class="muted">Contact: <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a></div>
+      </div>
+
+      <div class="bar" aria-label="language">
+        <button class="btn" type="button" onclick="setLang('ko')">한국어만</button>
+        <button class="btn" type="button" onclick="setLang('en')">English only</button>
+        <button class="btn primary" type="button" onclick="setLang('both')">KO+EN</button>
+        <a class="btn" href="delete-data.html">데이터 삭제 요청 / Data deletion</a>
+      </div>
+    </header>
+
+    <!-- ===================== KOREAN ===================== -->
+    <section class="card lang-ko">
+      <h2>1. 개요</h2>
+      <p>
+        본 개인정보처리방침은 SNOER(이하 “앱”)이 제공하는 코골이/수면 측정 서비스와 관련하여,
+        앱에서 처리되는 정보의 수집·이용·보관·삭제에 관한 기준을 설명합니다.
+      </p>
+      <p class="notice">
+        ※ 본 앱은 의료기기가 아니며, 의학적 진단/치료를 대체하지 않습니다.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>2. 수집/처리하는 정보</h2>
+
+      <h3>2.1 사용자가 앱 사용 중 생성하는 데이터</h3>
+      <ul>
+        <li><strong>오디오 데이터</strong>: 수면 중 코골이 분석을 위해 마이크 입력을 처리할 수 있습니다. (설정에 따라 파일로 저장될 수 있음)</li>
+        <li><strong>분석/기록 데이터</strong>: 코골이 이벤트(횟수/시간/강도), 하이라이트 구간, 요약 지표 등</li>
+        <li><strong>개입(진동) 관련 데이터</strong>(해당 기능 사용 시): 개입 실행 여부, 쿨다운/민감도 설정, 실행 로그 등</li>
+      </ul>
+
+      <h3>2.2 기기/앱 정보</h3>
+      <ul>
+        <li><strong>필수 권한</strong>: 마이크(녹음), 저장공간(파일 저장이 있는 경우), 알림(예약/리마인더 사용 시)</li>
+        <li><strong>진단 정보</strong>(선택): 오류 로그/크래시 정보(문제 해결을 위해)</li>
+      </ul>
+
+      <h3>2.3 광고/결제 관련 정보(해당 시)</h3>
+      <ul>
+        <li>앱이 광고 SDK(예: Google AdMob)를 사용하는 경우, 광고 제공/측정 목적의 <strong>기기 식별자(광고 ID)</strong>, <strong>기기 정보</strong>, <strong>대략적 위치(추정)</strong> 등이 SDK를 통해 처리될 수 있습니다.</li>
+        <li>인앱 결제를 사용하는 경우, 결제 처리는 스토어(Google Play)의 시스템을 통해 이루어지며, 앱은 결제 완료 여부 등 최소 정보만 확인할 수 있습니다.</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>3. 이용 목적</h2>
+      <ul>
+        <li>수면/코골이 측정 및 분석 결과 제공</li>
+        <li>하이라이트/요약 화면 제공 및 재생 기능 제공</li>
+        <li>사용자 설정(민감도, 쿨다운, 저장 방식 등) 적용</li>
+        <li>앱 안정성 향상(오류 분석, 성능 개선)</li>
+        <li>(해당 시) 광고 제공 및 측정, 결제/구독 기능 제공</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>4. 보관 및 삭제</h2>
+      <h3>4.1 기본 보관 위치</h3>
+      <p>
+        앱에서 생성되는 측정/분석 데이터는 원칙적으로 <strong>사용자 기기 내부(온디바이스)</strong>에 저장될 수 있습니다.
+      </p>
+
+      <h3>4.2 삭제 방법</h3>
+      <ul>
+        <li>앱 내 제공되는 <strong>기록 삭제</strong> 기능(있는 경우)을 통해 삭제할 수 있습니다.</li>
+        <li>앱을 <strong>삭제(언인스톨)</strong>하면 기기 내 저장된 앱 데이터가 제거될 수 있습니다(기기/OS 설정에 따라 다를 수 있음).</li>
+        <li>추가로, 데이터 삭제 요청이 필요한 경우: <a href="delete-data.html">데이터 삭제 요청 페이지</a> 또는 <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>으로 문의할 수 있습니다.</li>
+      </ul>
+
+      <h3>4.3 자동 삭제(해당 시)</h3>
+      <p class="notice">
+        앱에 “자동 삭제” 기능이 있는 경우, 설정된 보관 기간에 따라 데이터가 자동 삭제될 수 있습니다.
+        (실제 동작이 앱에 구현되어 있다면, 이 문구는 그대로 사용 가능)
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>5. 제3자 제공 및 처리위탁</h2>
+      <p>
+        앱은 원칙적으로 사용자의 측정/분석 데이터를 제3자에게 판매하거나 제공하지 않습니다.
+        다만 아래의 경우, 서비스 제공을 위해 제3자 SDK가 관여할 수 있습니다.
+      </p>
+      <ul>
+        <li><strong>광고 SDK</strong>(해당 시): 광고 제공/측정(예: Google AdMob)</li>
+        <li><strong>크래시/분석 도구</strong>(해당 시): 앱 품질 개선을 위한 오류/사용 통계(도입한 경우에 한함)</li>
+      </ul>
+      <p class="notice">
+        실제로 사용 중인 SDK 목록은 앱 버전 및 설정에 따라 달라질 수 있습니다.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>6. 보안</h2>
+      <ul>
+        <li>전송이 필요한 경우, 일반적으로 <strong>암호화된 통신(예: HTTPS)</strong>을 사용합니다.</li>
+        <li>앱 내부 저장 데이터는 OS의 앱 전용 저장소(샌드박스) 정책을 따릅니다.</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>7. 아동/청소년</h2>
+      <p>
+        본 앱은 일반적으로 <strong>만 18세 이상</strong>을 대상으로 합니다. 아동을 대상으로 서비스를 제공하지 않습니다.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>8. 문의</h2>
+      <p>
+        개인정보 관련 문의/요청은 아래 이메일로 연락해주세요:
+        <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>9. 정책 변경</h2>
+      <p>
+        본 방침은 법령/서비스 변경에 따라 수정될 수 있으며, 중요한 변경사항은 본 페이지를 통해 고지합니다.
+      </p>
+    </section>
+
+    <!-- ===================== ENGLISH ===================== -->
+    <section class="card lang-en">
+      <h2>1. Overview</h2>
+      <p>
+        This Privacy Policy explains how SNOER (the “App”) handles information related to snoring/sleep tracking,
+        including collection, use, storage, and deletion.
+      </p>
+      <p class="notice">
+        *The App is not a medical device and is not intended to diagnose or treat medical conditions.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>2. Information We Process</h2>
+
+      <h3>2.1 Data generated during app use</h3>
+      <ul>
+        <li><strong>Audio data</strong>: Microphone input may be processed for snoring detection. (May be saved as files depending on settings.)</li>
+        <li><strong>Analysis & records</strong>: Snoring events (count/time/intensity), highlights, and summary metrics.</li>
+        <li><strong>Intervention (vibration) data</strong> (if enabled): whether intervention ran, cooldown/sensitivity settings, execution logs.</li>
+      </ul>
+
+      <h3>2.2 Device/App information</h3>
+      <ul>
+        <li><strong>Permissions</strong>: Microphone (recording), storage (if saving files), notifications (if using reminders/scheduling).</li>
+        <li><strong>Diagnostics</strong> (optional): crash logs/error logs for troubleshooting.</li>
+      </ul>
+
+      <h3>2.3 Ads/Payments (if applicable)</h3>
+      <ul>
+        <li>If the App uses an ad SDK (e.g., Google AdMob), certain information such as <strong>Advertising ID</strong>, <strong>device info</strong>, and <strong>approximate location</strong> may be processed by the SDK for ad delivery and measurement.</li>
+        <li>If in-app purchases are enabled, payments are handled by the store system (Google Play). The App may only access minimal purchase state information.</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>3. Purposes of Use</h2>
+      <ul>
+        <li>Provide sleep/snoring tracking and analysis results</li>
+        <li>Provide highlight playback and summaries</li>
+        <li>Apply user settings (sensitivity, cooldown, storage mode, etc.)</li>
+        <li>Improve stability and performance (debugging, crash analysis)</li>
+        <li>(If applicable) Deliver ads and handle purchases/subscriptions</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>4. Storage & Deletion</h2>
+      <h3>4.1 Default storage</h3>
+      <p>
+        Tracking/analysis data is generally designed to be stored <strong>on-device</strong> (local storage), depending on the app version and settings.
+      </p>
+
+      <h3>4.2 How to delete</h3>
+      <ul>
+        <li>Use the App’s <strong>delete records</strong> feature (if available).</li>
+        <li>Uninstalling the app may remove app data stored on your device (behavior may vary by OS/device settings).</li>
+        <li>For additional assistance, see the <a href="delete-data.html">Data Deletion page</a> or contact <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>.</li>
+      </ul>
+
+      <h3>4.3 Auto-deletion (if applicable)</h3>
+      <p class="notice">
+        If the App includes an auto-deletion feature, data may be deleted automatically based on the configured retention period.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>5. Sharing & Third-party Processing</h2>
+      <p>
+        We do not sell user data. We generally do not share your tracking/analysis data with third parties.
+        However, third-party SDKs may process some information to provide services (if used).
+      </p>
+      <ul>
+        <li><strong>Ad SDK</strong> (if applicable): ad delivery and measurement (e.g., Google AdMob)</li>
+        <li><strong>Crash/analytics tools</strong> (if applicable): diagnostics and usage statistics if integrated</li>
+      </ul>
+      <p class="notice">
+        The actual SDKs used may vary by app version and configuration.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>6. Security</h2>
+      <ul>
+        <li>When transmission is required, we generally use <strong>encrypted transport</strong> (e.g., HTTPS).</li>
+        <li>Local storage follows the OS app sandbox policies.</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>7. Children</h2>
+      <p>
+        The App is generally intended for <strong>adults (18+)</strong> and is not directed to children.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>8. Contact</h2>
+      <p>
+        For privacy-related inquiries, contact:
+        <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>9. Changes to this policy</h2>
+      <p>
+        We may update this policy as laws or services change. Material changes will be posted on this page.
+      </p>
+    </section>
+
+    <footer>
+      <div class="notice">
+        © <span id="year"></span> SNOER · <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const $$ = (sel) => document.querySelectorAll(sel);
+    function setLang(mode){
+      const ko = $$(".lang-ko");
+      const en = $$(".lang-en");
+      if(mode === "ko"){
+        ko.forEach(el => el.classList.remove("hide"));
+        en.forEach(el => el.classList.add("hide"));
+        document.documentElement.lang = "ko";
+      } else if(mode === "en"){
+        ko.forEach(el => el.classList.add("hide"));
+        en.forEach(el => el.classList.remove("hide"));
+        document.documentElement.lang = "en";
+      } else {
+        ko.forEach(el => el.classList.remove("hide"));
+        en.forEach(el => el.classList.remove("hide"));
+        document.documentElement.lang = "ko";
+      }
+      try { localStorage.setItem("lang", mode); } catch(e) {}
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const saved = (() => { try { return localStorage.getItem("lang"); } catch(e){ return null; } })();
+    setLang(saved || "both");
+  </script>
+</body>
+</html>
