@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SNOER — AI 기반 코골이/수면 측정</title>
+  <meta name="description" content="SNOER는 코골이 소리를 감지하고 하이라이트를 자동으로 정리하는 수면 측정 앱입니다. 온디바이스 분석으로 프라이버시를 우선합니다." />
+
+  <!-- Open Graph (공유 미리보기) -->
+  <meta property="og:title" content="SNOER — Snoring & Sleep Tracker" />
+  <meta property="og:description" content="On-device snoring detection, highlights, and optional vibration intervention. Privacy-first." />
+  <meta property="og:type" content="website" />
+  <!-- og:image는 배포 후 실제 이미지 URL로 교체하세요 -->
+  <!-- <meta property="og:image" content="https://yourdomain.com/og.png" /> -->
+
+  <style>
+    :root { color-scheme: light dark; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(94,140,255,0.35), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(96,220,255,0.18), transparent 55%),
+                  #060a16;
+      color:#eaf0ff;
+      line-height:1.55;
+    }
+    a{ color:#9ab6ff; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width: 1100px; margin:0 auto; padding: 22px; }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 10px 0 6px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800; letter-spacing: 0.4px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(79,124,255,1), rgba(125,220,255,1));
+      box-shadow: 0 10px 30px rgba(79,124,255,0.22);
+    }
+    .langbar{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: inherit;
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 14px;
+      user-select:none;
+    }
+    .btn.primary{
+      background:#4f7cff;
+      border-color:#4f7cff;
+      color:#071229;
+      box-shadow: 0 12px 30px rgba(79,124,255,0.28);
+    }
+    .btn.ghost{
+      background: transparent;
+    }
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 980px){
+      .hero{ grid-template-columns: 1.1fr 0.9fr; gap: 22px; }
+    }
+    .card{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+    h1{ font-size: 34px; margin: 8px 0 10px; line-height: 1.12; }
+    .sub{ font-size: 15px; opacity: 0.9; margin: 0 0 14px; }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin: 10px 0 18px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      font-size: 13px;
+      opacity: 0.96;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 820px){
+      .grid3{ grid-template-columns: repeat(3, 1fr); }
+    }
+    .feature h3{ margin: 0 0 6px; font-size: 16px; }
+    .feature p{ margin: 0; font-size: 14px; opacity: 0.9; }
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;
+    }
+    .mock{
+      min-height: 360px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+    }
+    .mock::before{
+      content:"";
+      position:absolute; inset:-40px -60px auto auto;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle at 30% 30%, rgba(79,124,255,0.55), transparent 60%);
+      filter: blur(1px);
+      transform: rotate(12deg);
+    }
+    .mock .screen{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .kpi .box{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+    }
+    .kpi .num{ font-size: 20px; font-weight: 900; }
+    .kpi .lbl{ font-size: 12px; opacity: 0.8; margin-top: 4px; }
+    .small{ font-size: 12px; opacity: 0.75; }
+    .footer{
+      margin-top: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      padding: 14px 0 26px;
+      opacity: 0.9;
+    }
+    .links{ display:flex; gap: 14px; flex-wrap:wrap; }
+    .sep{ opacity:0.5; }
+    .hide{ display:none !important; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand" aria-label="SNOER">
+        <div class="logo" aria-hidden="true"></div>
+        <div>SNOER</div>
+      </div>
+
+      <div class="langbar" aria-label="language">
+        <button class="btn ghost" type="button" onclick="setLang('ko')">한국어</button>
+        <button class="btn ghost" type="button" onclick="setLang('en')">English</button>
+        <button class="btn" type="button" onclick="setLang('both')">KO+EN</button>
+      </div>
+    </div>
+
+    <div class="hero">
+      <!-- LEFT: copy -->
+      <section class="card">
+        <div class="lang-ko">
+          <h1>코골이를 <span style="color:#7ddcff;">자동 감지</span>하고<br/>중요 구간만 <span style="color:#9ab6ff;">하이라이트</span>로.</h1>
+          <p class="sub">
+            SNOER는 수면 중 코골이 소리를 분석해 요약과 하이라이트를 제공합니다.
+            분석은 기기 내부에서 처리하는 것을 우선으로 설계되었습니다(프라이버시 중심).
+          </p>
+        </div>
+
+        <div class="lang-en">
+          <h1>Auto-detect <span style="color:#7ddcff;">snoring</span>,<br/>save only the <span style="color:#9ab6ff;">highlights</span>.</h1>
+          <p class="sub">
+            SNOER tracks snoring during sleep and generates summaries & highlights.
+            Designed with a privacy-first, on-device approach.
+          </p>
+        </div>
+
+        <div class="pillrow">
+          <div class="pill">🎧 <span class="lang-ko">하이라이트 재생</span><span class="lang-en">Highlight playback</span></div>
+          <div class="pill">🔒 <span class="lang-ko">온디바이스 분석</span><span class="lang-en">On-device analysis</span></div>
+          <div class="pill">📳 <span class="lang-ko">진동 개입(옵션)</span><span class="lang-en">Vibration intervention (optional)</span></div>
+          <div class="pill">🗑️ <span class="lang-ko">앱 내 삭제 지원</span><span class="lang-en">In-app deletion support</span></div>
+        </div>
+
+        <div class="grid3">
+          <div class="card feature">
+            <h3 class="lang-ko">하이라이트 중심</h3>
+            <h3 class="lang-en">Highlights first</h3>
+            <p class="lang-ko">긴 녹음 전체가 아니라, 의미 있는 구간만 빠르게 확인합니다.</p>
+            <p class="lang-en">Review key moments instead of scrubbing through long recordings.</p>
+          </div>
+
+          <div class="card feature">
+            <h3 class="lang-ko">간단한 사용 흐름</h3>
+            <h3 class="lang-en">Simple flow</h3>
+            <p class="lang-ko">오늘 밤 시작 → 아침에 요약/하이라이트 확인.</p>
+            <p class="lang-en">Start tonight → check summary & highlights in the morning.</p>
+          </div>
+
+          <div class="card feature">
+            <h3 class="lang-ko">개입 설정(선택)</h3>
+            <h3 class="lang-en">Intervention controls</h3>
+            <p class="lang-ko">필요 시 진동 개입을 켜고 민감도/쿨다운을 설정할 수 있습니다.</p>
+            <p class="lang-en">Optionally enable vibration and tune sensitivity/cooldown.</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <!-- TODO: 실제 스토어 링크로 교체 -->
+          <a class="btn primary" href="#" aria-label="Google Play">
+            ▶ <span class="lang-ko">Google Play</span><span class="lang-en">Google Play</span>
+          </a>
+          <a class="btn" href="#" aria-label="App Store">
+             <span class="lang-ko">App Store(준비 중)</span><span class="lang-en">App Store (coming soon)</span>
+          </a>
+          <a class="btn" href="mailto:pakss894@gmail.com?subject=%5BSNOER%5D%20%EB%AC%B8%EC%9D%98%20%2F%20Support" aria-label="Contact">
+            ✉ <span class="lang-ko">문의</span><span class="lang-en">Contact</span>
+          </a>
+        </div>
+
+        <p class="small" style="margin-top: 12px;">
+          <span class="lang-ko">※ 본 서비스는 의료기기가 아니며, 의학적 진단/치료를 대체하지 않습니다.</span>
+          <span class="lang-en">※ Not a medical device. Not intended to diagnose or treat medical conditions.</span>
+        </p>
+      </section>
+
+      <!-- RIGHT: simple mock -->
+      <aside class="card mock">
+        <div class="screen">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <div style="font-weight:900; letter-spacing:0.2px;">Tonight</div>
+            <div class="pill">SNOER</div>
+          </div>
+
+          <div style="margin-top: 12px;" class="lang-ko">
+            <div style="font-size:14px; opacity:0.9;">오늘 밤 수면 측정을 시작하세요.</div>
+          </div>
+          <div style="margin-top: 12px;" class="lang-en">
+            <div style="font-size:14px; opacity:0.9;">Start sleep tracking tonight.</div>
+          </div>
+
+          <div style="margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <div class="btn primary" style="pointer-events:none; width:100%; justify-content:center;">
+              🎙 <span class="lang-ko">측정 시작</span><span class="lang-en">Start</span>
+            </div>
+            <div class="btn" style="pointer-events:none; flex:1;">⏱ <span class="lang-ko">지연</span><span class="lang-en">Delay</span></div>
+            <div class="btn" style="pointer-events:none; flex:1;">🗓 <span class="lang-ko">예약</span><span class="lang-en">Schedule</span></div>
+          </div>
+
+          <div class="kpi">
+            <div class="box">
+              <div class="num">3</div>
+              <div class="lbl"><span class="lang-ko">최근 측정</span><span class="lang-en">Recent sessions</span></div>
+            </div>
+            <div class="box">
+              <div class="num">1</div>
+              <div class="lbl"><span class="lang-ko">하이라이트</span><span class="lang-en">Highlights</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div class="small">
+              <span class="lang-ko">팁: 기기 내부에서 분석되도록 설계되어 프라이버시를 우선합니다.</span>
+              <span class="lang-en">Tip: Designed to prioritize privacy with an on-device approach.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="links">
+            <!-- TODO: 실제 URL로 교체 -->
+            <a href="delete-data.html"><span class="lang-ko">데이터 삭제 요청</span><span class="lang-en">Data deletion</span></a>
+            <span class="sep">•</span>
+            <a href="mailto:pakss894@gmail.com"><span class="lang-ko">지원</span><span class="lang-en">Support</span></a>
+            <span class="sep">•</span>
+            <a href="#" onclick="alert('Privacy Policy URL을 여기에 연결하세요.'); return false;">
+              <span class="lang-ko">개인정보처리방침</span><span class="lang-en">Privacy Policy</span>
+            </a>
+          </div>
+          <div class="small">© <span id="year"></span> SNOER</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel) => document.querySelectorAll(sel);
+    function setLang(mode){
+      const ko = $(".lang-ko");
+      const en = $(".lang-en");
+      if(mode === "ko"){
+        ko.forEach(el => el.classList.remove("hide"));
+        en.forEach(el => el.classList.add("hide"));
+        document.documentElement.lang = "ko";
+      } else if(mode === "en"){
+        ko.forEach(el => el.classList.add("hide"));
+        en.forEach(el => el.classList.remove("hide"));
+        document.documentElement.lang = "en";
+      } else {
+        ko.forEach(el => el.classList.remove("hide"));
+        en.forEach(el => el.classList.remove("hide"));
+        document.documentElement.lang = "ko";
+      }
+      try { localStorage.setItem("lang", mode); } catch(e) {}
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // default language
+    const saved = (() => { try { return localStorage.getItem("lang"); } catch(e) { return null; } })();
+    setLang(saved || "both");
+  </script>
+</body>
+</html>
