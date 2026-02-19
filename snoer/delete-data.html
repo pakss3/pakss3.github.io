@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>데이터 삭제 요청 / Data Deletion Request</title>
+  <meta name="description" content="앱 데이터 삭제 요청 안내 페이지 (Korean/English)" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      margin: 0; padding: 0;
+      line-height: 1.55;
+      background: #0b1020;
+      color: #e8eefc;
+    }
+    header, main, footer { max-width: 880px; margin: 0 auto; padding: 24px; }
+    header {
+      padding-top: 28px;
+    }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    h2 { font-size: 16px; margin: 0 0 10px; }
+    p, li { font-size: 14px; opacity: 0.95; }
+    a { color: #8fb3ff; }
+    .muted { opacity: 0.75; }
+    .langbar {
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn.primary {
+      background: #4f7cff;
+      border-color: #4f7cff;
+      color: #06112d;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 880px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .hr {
+      height: 1px; background: rgba(255,255,255,0.12);
+      margin: 16px 0;
+    }
+    footer { padding-bottom: 40px; }
+    .notice { font-size: 12px; opacity: 0.75; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      데이터 삭제 요청 / Data Deletion Request
+      <span class="pill">Korean · English</span>
+    </h1>
+    <p class="muted">
+      이 페이지는 Google Play 스토어의 “데이터 삭제 요청” URL로 사용하기 위한 안내 페이지입니다.
+      <br />
+      This page is provided for Google Play “Data Deletion Request” URL.
+    </p>
+
+    <div class="langbar">
+      <button class="btn" type="button" onclick="showLang('both')">한글+English</button>
+      <button class="btn" type="button" onclick="showLang('ko')">한국어만</button>
+      <button class="btn" type="button" onclick="showLang('en')">English only</button>
+      <a class="btn primary" id="mailtoBtn" href="#">이메일로 삭제 요청 보내기 / Send request via email</a>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- KOREAN -->
+    <section class="card lang-ko">
+      <h2>한국어 안내</h2>
+      <p>
+        안녕하세요. 본 앱(코골이/수면 측정 앱)에서 생성되는 데이터 삭제를 원하시면 아래 방법을 이용해 주세요.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>1) 앱 내에서 직접 삭제</h2>
+      <ul>
+        <li>앱의 <b>기록/저장된 데이터 삭제</b> 기능(있는 경우)을 통해 삭제할 수 있습니다.</li>
+        <li>앱을 <b>삭제(언인스톨)</b>하면 기기 내부에 저장된 앱 데이터가 함께 제거될 수 있습니다(기기/OS 설정에 따라 다를 수 있음).</li>
+      </ul>
+
+      <h2>2) 이메일로 삭제 요청</h2>
+      <p>
+        아래 이메일로 삭제 요청을 보내주시면 가능한 범위 내에서 안내 및 처리합니다.
+        (계정 기반 서비스가 아닌 경우, 기기 내부 데이터는 사용자가 직접 삭제해야 할 수 있습니다.)
+      </p>
+      <ul>
+        <li>이메일: <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a></li>
+        <li>제목 예시: <b>[데이터 삭제 요청] 앱 데이터 삭제</b></li>
+        <li>본문에 아래 정보를 포함해 주세요:
+          <ul>
+            <li>사용 중인 기기(OS/모델)</li>
+            <li>앱 버전(가능하면)</li>
+            <li>삭제를 원하는 데이터 유형(예: 수면 기록, 코골이 이벤트, 오디오 파일 등)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>수집/저장되는 데이터 예시</h2>
+      <ul>
+        <li>수면/코골이 분석 결과(기록, 이벤트, 요약)</li>
+        <li>오디오 녹음 파일(설정에 따라 저장될 수 있음)</li>
+        <li>진동 개입/상태 로그(있는 경우)</li>
+      </ul>
+
+      <p class="notice">
+        ※ 본 앱은 일반적으로 <b>온디바이스(기기 내부)</b>에서 데이터를 처리/저장하도록 설계될 수 있습니다.
+        실제 동작은 앱 설정 및 버전에 따라 달라질 수 있습니다.
+      </p>
+    </section>
+
+    <!-- ENGLISH -->
+    <section class="card lang-en">
+      <h2>English Information</h2>
+      <p>
+        If you would like to request deletion of data created by this app (snoring/sleep tracking),
+        please use one of the methods below.
+      </p>
+
+      <div class="hr"></div>
+
+      <h2>1) Delete directly in the app</h2>
+      <ul>
+        <li>You may delete saved records using the app’s <b>Delete</b> feature (if available).</li>
+        <li>Uninstalling the app may remove app data stored on your device (behavior may vary by device/OS settings).</li>
+      </ul>
+
+      <h2>2) Request deletion via email</h2>
+      <p>
+        Send an email request to the address below. We will guide and handle what is feasible.
+        (If the app does not use accounts and stores data only on-device, you may need to delete data directly on your device.)
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a></li>
+        <li>Subject example: <b>[Data Deletion Request] App data deletion</b></li>
+        <li>Please include:
+          <ul>
+            <li>Device info (OS / model)</li>
+            <li>App version (if possible)</li>
+            <li>What data you want deleted (e.g., sleep records, snoring events, audio files)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <h2>Examples of data that may be stored</h2>
+      <ul>
+        <li>Sleep/snoring analysis results (records, events, summaries)</li>
+        <li>Audio recordings (may be stored depending on settings)</li>
+        <li>Intervention/status logs (if enabled)</li>
+      </ul>
+
+      <p class="notice">
+        Note: This app may be designed to process/store data <b>on-device</b>.
+        Actual behavior can vary depending on app version and settings.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="muted">
+      문의/요청: <a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a>
+    </p>
+    <p class="notice">
+      © <span id="year"></span> Data Deletion Request Page
+    </p>
+  </footer>
+
+  <script>
+    const email = "pakss894@gmail.com";
+    const subject = encodeURIComponent("[Data Deletion Request] App data deletion / 데이터 삭제 요청");
+    const body = encodeURIComponent(
+`Please include the following:\n- Device (OS/model)\n- App version\n- What data to delete (sleep records, snoring events, audio files)\n\n---\n아래 정보를 포함해주세요:\n- 기기(OS/모델)\n- 앱 버전\n- 삭제 원하는 데이터(수면 기록/코골이 이벤트/오디오 등)\n`
+    );
+    document.getElementById("mailtoBtn").href = `mailto:${email}?subject=${subject}&body=${body}`;
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function showLang(mode) {
+      const ko = document.querySelectorAll(".lang-ko");
+      const en = document.querySelectorAll(".lang-en");
+      if (mode === "ko") {
+        ko.forEach(el => el.style.display = "");
+        en.forEach(el => el.style.display = "none");
+      } else if (mode === "en") {
+        ko.forEach(el => el.style.display = "none");
+        en.forEach(el => el.style.display = "");
+      } else {
+        ko.forEach(el => el.style.display = "");
+        en.forEach(el => el.style.display = "");
+      }
+    }
+    // default: show both
+    showLang("both");
+  </script>
+</body>
+</html>
