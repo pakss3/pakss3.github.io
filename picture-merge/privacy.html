@@ -1,41 +1,289 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Picture Merge — Privacy Policy</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 0 16px; }
-    h1,h2 { line-height: 1.2; }
-    code { background: #f4f4f4; padding: 2px 6px; border-radius: 6px; }
-    .meta { color: #666; font-size: 14px; }
-  </style>
-</head>
-<body>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: 2026-03-05</p>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Picture Merge Privacy Policy | 개인정보 처리방침</title>
+    <meta
+      name="description"
+      content="Picture Merge 개인정보 처리방침 및 Privacy Policy. 한국어와 영어 안내를 함께 제공합니다."
+    />
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --text: #1b2430;
+        --muted: #526174;
+        --line: #d9e1ea;
+        --brand: #0f6fdf;
+      }
 
-  <p>This Privacy Policy explains how <strong>Picture Merge</strong> handles information.</p>
+      * {
+        box-sizing: border-box;
+      }
 
-  <h2>Information We Collect</h2>
-  <ul>
-    <li><strong>App usage and diagnostics</strong>: We may collect basic diagnostics to improve stability (only if enabled by the app build and its dependencies).</li>
-    <li><strong>User content</strong>: Content you create in the app may be stored locally on your device unless otherwise stated.</li>
-  </ul>
+      body {
+        margin: 0;
+        font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 30%, #f8fafc 100%);
+        line-height: 1.65;
+      }
 
-  <h2>How We Use Information</h2>
-  <ul>
-    <li>To provide core app functionality</li>
-    <li>To improve reliability and performance</li>
-    <li>To understand onboarding and retention metrics (when analytics is enabled)</li>
-  </ul>
+      .wrap {
+        width: min(1080px, 92%);
+        margin: 0 auto;
+        padding: 38px 0 64px;
+      }
 
-  <h2>Data Sharing</h2>
-  <p>We do not sell your personal data. If third-party services are used (e.g., crash reporting), data may be processed by those providers under their terms.</p>
+      .top {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(18, 39, 66, 0.06);
+      }
 
-  <h2>Contact</h2>
-  <p>If you have questions, contact: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a></p>
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 10px;
+      }
 
-  <hr />
-</body>
+      h1 {
+        font-size: clamp(28px, 5vw, 40px);
+      }
+
+      h2 {
+        margin-top: 26px;
+        font-size: clamp(20px, 3vw, 28px);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .pair {
+        margin-top: 14px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      p {
+        margin: 0 0 10px;
+      }
+
+      .actions {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: #fff;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+
+      footer {
+        margin-top: 26px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .pair {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="top">
+        <h1>개인정보 처리방침 / Privacy Policy</h1>
+        <p class="muted">Picture Merge</p>
+        <p class="muted">시행일 / Effective Date: March 5, 2026</p>
+        <div class="actions">
+          <a class="btn primary" href="index.html">앱 소개로 이동 / Back to Home</a>
+          <a class="btn" href="mailto:pakss894@gmail.com">문의 / Contact: pakss894@gmail.com</a>
+        </div>
+      </section>
+
+      <h2>1. 개요 / Overview</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>
+            Picture Merge는 사용자가 선택한 사진을 템플릿에 배치하여 저장 또는 공유할 수 있도록
+            제공되는 앱입니다. 본 방침은 앱에서 처리되는 정보와 이용자의 권리에 대해 설명합니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>
+            Picture Merge helps users place selected photos into templates and export or share results.
+            This policy explains what information is processed and how users can contact us.
+          </p>
+        </article>
+      </section>
+
+      <h2>2. 수집 및 처리 정보 / Information We Process</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <ul>
+            <li>앱은 회원가입 기능을 제공하지 않으며 이름, 이메일, 비밀번호를 직접 수집하지 않습니다.</li>
+            <li>사용자가 선택한 사진은 편집 및 내보내기 목적의 기기 내 처리에 사용됩니다.</li>
+            <li>앱 운영 및 안정성 개선을 위해 광고 또는 플랫폼 SDK에서 기술 정보가 처리될 수 있습니다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <ul>
+            <li>The app does not provide account sign-up and does not directly collect name, email, or password.</li>
+            <li>Selected photos are used on-device for editing and export workflows.</li>
+            <li>Technical data may be processed by advertising or platform SDKs for app operation and reliability.</li>
+          </ul>
+        </article>
+      </section>
+
+      <h2>3. 권한 사용 / Permissions</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <ul>
+            <li>사진 라이브러리 권한: 사진 선택 및 저장 기능 제공을 위해 사용합니다.</li>
+            <li>권한은 기기 설정에서 언제든지 변경할 수 있습니다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <ul>
+            <li>Photo library access: used to let users pick and save images.</li>
+            <li>Permission choices can be changed at any time in device settings.</li>
+          </ul>
+        </article>
+      </section>
+
+      <h2>4. 제3자 서비스 / Third-Party Services</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>
+            앱에는 광고 또는 플랫폼 연동 기능이 포함될 수 있으며, 관련 SDK 제공자가 서비스 제공에 필요한
+            정보를 처리할 수 있습니다. 해당 정보 처리는 각 제공자의 정책을 따릅니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>
+            The app may include ad or platform integrations. Related SDK providers may process information
+            required to deliver their services, subject to each provider's own policy.
+          </p>
+        </article>
+      </section>
+
+      <h2>5. 보관 및 삭제 / Retention and Deletion</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>
+            앱이 직접 수집하는 계정성 개인정보는 없습니다. 사용자가 앱에서 저장한 결과물은 이용자 기기 또는
+            이용자가 선택한 저장 위치에 보관됩니다. 삭제를 원할 경우 이용자가 직접 삭제할 수 있습니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>
+            The app does not directly maintain account-based personal data. Exported files are stored on the
+            user's device or chosen destination. Users can delete those files directly at any time.
+          </p>
+        </article>
+      </section>
+
+      <h2>6. 아동 개인정보 / Children's Privacy</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>
+            보호자는 아동의 앱 사용을 지도해야 하며, 개인정보 관련 문의가 있으면 아래 연락처로 문의해 주세요.
+          </p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>
+            Parents or guardians should supervise children's app usage. For privacy-related concerns, please
+            contact us at the email below.
+          </p>
+        </article>
+      </section>
+
+      <h2>7. 정책 변경 / Changes to This Policy</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>
+            법령, 서비스 내용, 운영 정책 변경에 따라 본 방침은 수정될 수 있습니다. 중요한 변경은 본 페이지를
+            통해 공지합니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>
+            This policy may be updated due to legal, service, or operational changes. Material updates will be
+            posted on this page.
+          </p>
+        </article>
+      </section>
+
+      <h2>8. 문의처 / Contact</h2>
+      <section class="pair">
+        <article class="card">
+          <h3>한국어</h3>
+          <p>문의할 내용이 있으면 아래 이메일로 연락해 주세요.</p>
+          <p><a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a></p>
+        </article>
+        <article class="card">
+          <h3>English</h3>
+          <p>If you have any questions, please contact us at:</p>
+          <p><a href="mailto:pakss894@gmail.com">pakss894@gmail.com</a></p>
+        </article>
+      </section>
+
+      <footer>
+        <p>Picture Merge Privacy Policy</p>
+        <p>Last updated: March 5, 2026</p>
+      </footer>
+    </main>
+  </body>
 </html>
