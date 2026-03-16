@@ -1,42 +1,255 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Long Capture KR — Privacy Policy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Long Capture KR privacy policy and on-device processing disclosure.">
+  <title>Long Capture KR Privacy Policy</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 0 16px; }
-    h1,h2 { line-height: 1.2; }
-    code { background: #f4f4f4; padding: 2px 6px; border-radius: 6px; }
-    .meta { color: #666; font-size: 14px; }
+    :root {
+      color-scheme: light;
+      --bg: #f7f3ed;
+      --surface: #fffaf3;
+      --text: #202522;
+      --muted: #5a655f;
+      --line: #d9ccb8;
+      --accent: #165d4b;
+      --accent-soft: #e8f1ec;
+      --warning: #b65f42;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Apple SD Gothic Neo", "Pretendard", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(22, 93, 75, 0.10), transparent 34%),
+        linear-gradient(180deg, #fcfaf5 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .shell {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero,
+    section {
+      background: rgba(255, 250, 243, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(36, 45, 39, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2 {
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 44px);
+    }
+
+    h2 {
+      font-size: clamp(22px, 3vw, 28px);
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 0;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .notice {
+      border-left: 4px solid var(--warning);
+      padding-left: 12px;
+      margin-top: 8px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: #fffdf8;
+    }
+
+    a {
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: 2026-03-13</p>
+  <main class="shell">
+    <article class="hero">
+      <h1>Long Capture KR Privacy Policy</h1>
+      <p>Last updated: March 12, 2026</p>
+      <p>
+        Long Capture KR is built for privacy-sensitive capture workflows such as chat proof,
+        order history archiving, support evidence, and long-page sharing. The capture content
+        itself is handled on device by default, while advertising and consent flows may still
+        rely on Google AdMob and Google UMP.
+      </p>
+      <div class="tag-row">
+        <span class="tag">On-device capture handling</span>
+        <span class="tag">AdMob consent via UMP</span>
+        <span class="tag">Editor stays ad-free</span>
+        <span class="tag">Drafts remain editable</span>
+      </div>
+    </article>
 
-  <p>This Privacy Policy explains how <strong>Long Capture KR</strong> handles information.</p>
+    <div class="stack">
+      <section>
+        <h2>한국어 안내</h2>
+        <p>
+          Long Capture KR는 스크린샷, 화면 녹화 프레임, 초안, export 결과물을 기본적으로 기기 안에서
+          처리합니다. 앱 자체는 캡처 원본을 자체 서버로 업로드하지 않습니다.
+        </p>
+        <p>
+          다만 광고와 동의 처리를 위해 Google Mobile Ads SDK와 User Messaging Platform(UMP)이
+          동작할 수 있으며, 이 과정에서 기기 식별자, 광고 응답 정보, 진단 정보, 대략적인 지역 정보가
+          Google에 전달될 수 있습니다.
+        </p>
+        <div class="columns">
+          <div class="card">
+            <h2>캡처 원본 / 초안</h2>
+            <p>
+              원본 이미지, seam 정보, cleanup 값, annotation/redaction 레이어, export preset은
+              초안을 재편집 가능한 상태로 복원하기 위해 로컬 저장소에 저장될 수 있습니다.
+            </p>
+            <p>
+              임시 export 파일과 샘플링 산출물은 작업 완료 후 정리 대상이며, 앱 삭제 시 운영체제 정책에
+              따라 함께 제거될 수 있습니다.
+            </p>
+          </div>
+          <div class="card">
+            <h2>광고 / 동의</h2>
+            <p>
+              하단 배너는 초안/내역 화면에만 두고, 보상형 광고는 고해상도 export, 무제한 자동 정렬,
+              고급 정리 같은 명시적 unlock 동작에서만 요청합니다. 편집 화면은 무광고로 유지합니다.
+            </p>
+            <p>
+              광고 요청 전에는 UMP를 통해 동의 상태를 갱신하고, 필요한 지역에서는 광고/개인정보 선택
+              화면을 제공합니다. 광고 요청은 non-personalized ads 중심으로 구성되어 캡처 내용이
+              광고 타기팅 입력으로 사용되지 않도록 분리합니다.
+            </p>
+          </div>
+        </div>
+        <p>
+          사용자가 PNG/JPG/PDF를 메신저, 이메일, 클라우드 서비스로 직접 공유하면 해당 목적지 서비스의
+          정책이 적용됩니다. Long Capture KR는 사용자가 명시적으로 공유를 실행하지 않는 한 자동 전송을
+          하지 않습니다.
+        </p>
+        <p>
+          저장된 초안과 export 기록은 사용자가 지우기 전까지 기기에 남을 수 있으며, 광고 SDK 관련
+          보관 기간과 사용 방식은 Google 정책의 적용을 받습니다.
+        </p>
+        <p class="notice">
+          지원 문의는 <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a> 으로 보내주세요.
+          저장 실패, 광고 문제, iPhone 호환성 문의 시 기기 모델과 앱 버전을 함께 적어주시면 확인이 빠릅니다.
+        </p>
+      </section>
 
-  <h2>Information We Collect</h2>
-  <ul>
-    <li><strong>App usage and diagnostics</strong>: We may collect basic diagnostics to improve stability (only if enabled by the app build and its dependencies).</li>
-    <li><strong>User content</strong>: Content you create in the app may be stored locally on your device unless otherwise stated.</li>
-  </ul>
+      <section>
+        <h2>English</h2>
+        <p>
+          Long Capture KR processes screenshots, sampled recording frames, drafts, and export
+          outputs on the device by default. The app does not upload capture contents to our own
+          servers.
+        </p>
+        <p>
+          Google Mobile Ads SDK and the User Messaging Platform (UMP) may still process device
+          identifiers, ad response data, diagnostics, and coarse region information for consent,
+          fraud prevention, and ad delivery.
+        </p>
+        <div class="columns">
+          <div class="card">
+            <h2>Draft storage</h2>
+            <p>
+              Source images, seam metadata, cleanup values, annotation/redaction layers, and export
+              presets can be stored locally so a draft can reopen in an editable state.
+            </p>
+            <p>
+              Temporary export staging files and sampling outputs are cleanup targets after a task
+              finishes and may also be removed when the app is deleted.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Ads and consent</h2>
+            <p>
+              Bottom banners are limited to the draft and history screens. Rewarded ads are only
+              requested when a user explicitly unlocks high-res export, unlimited auto alignment,
+              or advanced cleanup. The editor remains ad-free.
+            </p>
+            <p>
+              Before ad requests, the app refreshes consent status through UMP and offers ad/privacy
+              choices where required. Ad requests are configured around non-personalized ads so
+              capture contents stay outside ad-targeting inputs.
+            </p>
+          </div>
+        </div>
+        <p>
+          If you share generated PNG, JPG, or PDF files to a messaging, mail, or cloud service,
+          that destination service applies its own privacy policy. Long Capture KR does not auto-send
+          files to third-party services unless you explicitly choose to share them.
+        </p>
+        <p>
+          Saved drafts and export history can remain on your device until you remove them. Retention
+          and use of advertising-related data follow Google policies and should be re-checked before
+          each store submission.
+        </p>
+        <p class="notice">
+          For support, contact <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a>.
+          Include the device model, app version, and a screenshot of the issue for faster triage.
+        </p>
+      </section>
 
-  <h2>How We Use Information</h2>
-  <ul>
-    <li>To provide core app functionality</li>
-    <li>To improve reliability and performance</li>
-    <li>To understand onboarding and retention metrics (when analytics is enabled)</li>
-  </ul>
-
-  <h2>Data Sharing</h2>
-  <p>We do not sell your personal data. If third-party services are used (e.g., crash reporting), data may be processed by those providers under their terms.</p>
-
-  <h2>Contact</h2>
-  <p>If you have questions, contact: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a></p>
-
-  <hr />
-  <p class="meta">This document is generated by PDP Engine /release. Review and adjust it for your specific app and jurisdiction.</p>
+      <section>
+        <h2>Public policy note</h2>
+        <p>
+          This page is meant to be published at the app's privacy policy URL and kept in sync with
+          the in-app policy screen, store disclosures, and the live AdMob configuration.
+        </p>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
