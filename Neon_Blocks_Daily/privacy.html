@@ -1,42 +1,314 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Neon Blocks Daily — Privacy Policy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Blocks Daily Privacy Policy</title>
+  <meta
+    name="description"
+    content="Privacy Policy for Neon Blocks Daily."
+  >
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 0 16px; }
-    h1,h2 { line-height: 1.2; }
-    code { background: #f4f4f4; padding: 2px 6px; border-radius: 6px; }
-    .meta { color: #666; font-size: 14px; }
+    :root {
+      --bg: #fff9f2;
+      --bg2: #f2f8ff;
+      --ink: #132238;
+      --muted: #5f718b;
+      --line: rgba(19, 34, 56, 0.12);
+      --panel: rgba(255, 255, 255, 0.9);
+      --cyan: #78e8ff;
+      --gold: #ffd978;
+      --pink: #ffb9cb;
+      --shadow: 0 24px 60px rgba(28, 51, 86, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255, 217, 120, 0.34), transparent 18%),
+        radial-gradient(circle at 92% 8%, rgba(120, 232, 255, 0.28), transparent 18%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+
+    .wrap {
+      width: min(980px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 16px;
+    }
+
+    .nav,
+    .hero,
+    .section-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+    }
+
+    .nav a,
+    .contact-card a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .hero {
+      padding: 30px;
+      margin-top: 16px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p,
+    .section-card p,
+    .section-card li,
+    .contact-card p {
+      color: var(--muted);
+      line-height: 1.74;
+      font-size: 16px;
+    }
+
+    .hero p {
+      max-width: 64ch;
+      margin: 16px 0 0;
+    }
+
+    main {
+      padding-bottom: 42px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .section-card,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .section-card h2,
+    .contact-card h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .mini-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255, 217, 120, 0.16), rgba(120, 232, 255, 0.14));
+      color: var(--muted);
+    }
+
+    .contact-card a {
+      color: #0d5f83;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 0 0 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: 2026-03-24</p>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <strong>Neon Blocks Daily Privacy Policy</strong>
+        <div class="nav-links">
+          <a href="/Neon_Blocks_Daily/">홈 / Home</a>
+          <a href="/Neon_Blocks_Daily/support.html">지원 / Support</a>
+        </div>
+      </div>
 
-  <p>This Privacy Policy explains how <strong>Neon Blocks Daily</strong> handles information.</p>
+      <section class="hero">
+        <div class="eyebrow">
+          <span>Last updated: 2026-03-26</span>
+          <span>Public policy page</span>
+          <span>Applies to version 1.9.0</span>
+        </div>
+        <h1>Neon Blocks Daily 개인정보 처리방침</h1>
+        <p>
+          이 페이지는 Neon Blocks Daily 앱이 어떤 정보를 기기 안에 저장하고,
+          어떤 제3자 서비스가 게임 운영, 광고, 안정성 분석을 위해 사용되는지 설명합니다.
+        </p>
+        <p>
+          This page explains what Neon Blocks Daily stores locally on your device
+          and what third-party services may process data for analytics, ads, and crash diagnostics.
+        </p>
+      </section>
+    </div>
+  </header>
 
-  <h2>Information We Collect</h2>
-  <ul>
-    <li><strong>App usage and diagnostics</strong>: We may collect basic diagnostics to improve stability (only if enabled by the app build and its dependencies).</li>
-    <li><strong>User content</strong>: Content you create in the app may be stored locally on your device unless otherwise stated.</li>
-  </ul>
+  <main>
+    <div class="wrap">
+      <section class="stack">
+        <article class="section-card">
+          <h2>1. 직접 입력받는 개인정보</h2>
+          <p>
+            Neon Blocks Daily는 계정 생성이 필요하지 않습니다. 앱 내부에서 이름, 이메일 주소,
+            전화번호, 집 주소, 결제 정보를 직접 입력받지 않습니다.
+          </p>
+        </article>
 
-  <h2>How We Use Information</h2>
-  <ul>
-    <li>To provide core app functionality</li>
-    <li>To improve reliability and performance</li>
-    <li>To understand onboarding and retention metrics (when analytics is enabled)</li>
-  </ul>
+        <article class="section-card">
+          <h2>2. 기기에 로컬 저장되는 정보</h2>
+          <p>
+            게임을 실행하고 진행 상황을 유지하기 위해 다음 정보가 기기 내부 저장소에 보관될 수 있습니다.
+          </p>
+          <ul>
+            <li>데일리 스테이지 진행도, 최고 점수, 별 개수</li>
+            <li>아이템 보유량, 스킨 해금 상태, 연속 플레이 기록</li>
+            <li>하트 개수, 충전 시간, 관련 플레이 상태</li>
+            <li>튜토리얼 완료 여부와 일부 UI 상태</li>
+            <li>선택한 언어 설정</li>
+          </ul>
+        </article>
 
-  <h2>Data Sharing</h2>
-  <p>We do not sell your personal data. If third-party services are used (e.g., crash reporting), data may be processed by those providers under their terms.</p>
+        <article class="section-card">
+          <h2>3. 제3자 SDK를 통한 자동 수집 정보</h2>
+          <p>
+            앱은 Google AdMob, Firebase Analytics, Firebase Crashlytics를 사용합니다.
+            이 과정에서 앱 버전, 기기 모델, 운영체제 버전, 화면 조회, 게임 이벤트, 충돌 로그,
+            광고 전달에 필요한 기기/네트워크 정보가 처리될 수 있습니다.
+          </p>
+          <div class="mini-note">
+            앱은 일반 플레이를 위해 연락처, 사진, 카메라, 마이크, 정밀 위치 접근을 요구하지 않습니다.
+          </div>
+        </article>
 
-  <h2>Contact</h2>
-  <p>If you have questions, contact: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a></p>
+        <article class="section-card">
+          <h2>4. 정보 사용 목적</h2>
+          <ul>
+            <li>로컬 진행도 저장 및 복원</li>
+            <li>하트, 목표, 보상, 해금 시스템 운영</li>
+            <li>자주 사용되는 화면과 플레이 흐름 분석</li>
+            <li>버그, 충돌, 성능 문제 진단</li>
+            <li>광고 제공, 보상 광고 처리, 비정상 사용 방지</li>
+          </ul>
+        </article>
 
-  <hr />
-  <p class="meta">This document is generated by PDP Engine /release. Review and adjust it for your specific app and jurisdiction.</p>
+        <article class="section-card">
+          <h2>5. 제3자 제공 및 처리</h2>
+          <p>
+            당사는 이용자 정보를 판매하지 않습니다. 다만 앱 운영을 위해 Google Firebase,
+            Google AdMob, Apple App Store와 같은 서비스 제공자가 관련 정보를 처리할 수 있습니다.
+          </p>
+        </article>
+
+        <article class="section-card">
+          <h2>6. 보관 기간</h2>
+          <p>
+            로컬 저장 데이터는 앱 삭제 또는 앱 데이터 삭제 전까지 기기에 남아 있을 수 있습니다.
+            분석, 충돌, 광고 관련 데이터의 보관 기간은 각 제3자 서비스의 정책을 따릅니다.
+          </p>
+        </article>
+
+        <article class="section-card">
+          <h2>7. 아동의 개인정보</h2>
+          <p>
+            Neon Blocks Daily는 일반 이용자 대상 퍼즐 게임이며, 아동으로부터 개인정보를 직접 수집하기 위한 서비스로 설계되지 않았습니다.
+          </p>
+        </article>
+
+        <article class="section-card">
+          <h2>8. 국제 이전 가능성</h2>
+          <p>
+            앱에서 사용하는 제3자 서비스는 이용자 거주 국가 밖의 서버에서 데이터를 처리할 수 있습니다.
+          </p>
+        </article>
+
+        <article class="section-card">
+          <h2>9. 이용자 선택권</h2>
+          <ul>
+            <li>언제든지 앱 사용을 중단할 수 있습니다.</li>
+            <li>앱 삭제 또는 앱 데이터 삭제로 로컬 저장 데이터를 제거할 수 있습니다.</li>
+            <li>기기 설정에서 광고 식별자 또는 광고 개인정보 설정을 조정할 수 있습니다.</li>
+          </ul>
+        </article>
+
+        <article class="contact-card">
+          <h2>10. 문의</h2>
+          <p>
+            개인정보 관련 문의는 아래 연락처로 보내주세요.<br>
+            Developer: Sangsu Park
+          </p>
+          <p><a href="mailto:pakss3@naver.com">pakss3@naver.com</a></p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Neon Blocks Daily privacy policy
+  </footer>
 </body>
 </html>
