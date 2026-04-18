@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXUS BREAK</title>
+  <meta
+    name="description"
+    content="Official support and store information page for NEXUS BREAK."
+  >
+  <style>
+    :root {
+      --bg: #06101e;
+      --bg2: #0b1830;
+      --ink: #edf4ff;
+      --muted: #9db3d4;
+      --line: rgba(157, 179, 212, 0.18);
+      --panel: rgba(9, 18, 34, 0.76);
+      --cyan: #56e6ff;
+      --violet: #7e6bff;
+      --pink: #ff5bbd;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(86, 230, 255, 0.20), transparent 20%),
+        radial-gradient(circle at 88% 4%, rgba(255, 91, 189, 0.18), transparent 18%),
+        radial-gradient(circle at 60% 110%, rgba(126, 107, 255, 0.22), transparent 28%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 18px;
+    }
+
+    .nav,
+    .hero,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+    }
+
+    .nav a,
+    .hero a,
+    .panel a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a,
+    .cta-row a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero {
+      margin-top: 16px;
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 88px);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--cyan), #ffffff 45%, var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p,
+    .panel p,
+    .panel li {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .hero p {
+      max-width: 66ch;
+      margin: 16px 0 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    main {
+      padding-bottom: 42px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      padding: 0 0 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <strong>NEXUS BREAK</strong>
+        <div class="nav-links">
+          <a href="/nexus-break/support.html">Support</a>
+          <a href="/nexus-break/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <section class="hero">
+        <div class="eyebrow">
+          <span>iPhone-first</span>
+          <span>Neon chain-reaction puzzle</span>
+          <span>Portrait and landscape support</span>
+        </div>
+        <h1><span class="gradient">NEXUS</span><br>BREAK</h1>
+        <p>
+          Plan one precise shot, launch a single energy ball, and trigger a cascading neon crystal reaction.
+          NEXUS BREAK blends ricochet aim, chain-reaction puzzle logic, and short arcade sessions into a dramatic
+          sci-fi board-clearing experience.
+        </p>
+        <div class="cta-row">
+          <a href="/nexus-break/support.html">Open support</a>
+          <a href="/nexus-break/privacy.html">Read privacy policy</a>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="grid">
+        <article class="panel">
+          <strong>Shot planning first</strong>
+          <p>
+            Drag to aim, preview your angle, and commit to a single launch that can bounce, split,
+            and overload the board.
+          </p>
+        </article>
+        <article class="panel">
+          <strong>Readable chain reactions</strong>
+          <p>
+            Nexus hubs, amplifiers, bombs, magnets, and void blocks create escalating outcomes that stay legible
+            even when the board gets chaotic.
+          </p>
+        </article>
+        <article class="panel">
+          <strong>Short-session replay loop</strong>
+          <p>
+            Built for fast 90 to 120 second runs with stage progression, daily challenge potential, and optional
+            ad-supported utility boosts outside the core launch flow.
+          </p>
+        </article>
+      </section>
+
+      <section class="section panel">
+        <strong>Current release surface</strong>
+        <ul>
+          <li>Responsive home shell and stage-oriented puzzle run loop</li>
+          <li>Preview path, block highlights, shot budget, score, retry, and advance flow</li>
+          <li>Multiple crystal block behaviors including nexus hub, pulse, magnet, splitter, bomb, and void</li>
+          <li>Korean and English product surface support</li>
+        </ul>
+      </section>
+
+      <section class="section panel">
+        <strong>Need help?</strong>
+        <p>
+          For store support, review questions, or runtime issue reports, use the support page linked above.
+          This site is the public reference surface used for App Store submission metadata.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      NEXUS BREAK public support surface
+    </div>
+  </footer>
+</body>
+</html>

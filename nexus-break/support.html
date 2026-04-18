@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXUS BREAK Support</title>
+  <meta
+    name="description"
+    content="Official support page for NEXUS BREAK."
+  >
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0d1f39;
+      --ink: #eef5ff;
+      --muted: #9cb2d2;
+      --line: rgba(156, 178, 210, 0.18);
+      --panel: rgba(9, 18, 34, 0.78);
+      --cyan: #54e8ff;
+      --pink: #ff62bf;
+      --violet: #8b73ff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(84, 232, 255, 0.2), transparent 18%),
+        radial-gradient(circle at 92% 0%, rgba(255, 98, 191, 0.18), transparent 18%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+
+    .wrap {
+      width: min(980px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 18px;
+    }
+
+    .nav,
+    .hero,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+    }
+
+    .nav a,
+    .hero a,
+    .card a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a,
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero {
+      margin-top: 16px;
+      padding: 30px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p,
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.74;
+      font-size: 16px;
+    }
+
+    .hero p {
+      max-width: 64ch;
+      margin: 16px 0 0;
+    }
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .contact-email {
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 0 0 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <strong>NEXUS BREAK Support</strong>
+        <div class="nav-links">
+          <a href="/nexus-break/index.html">Home</a>
+          <a href="/nexus-break/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <section class="hero">
+        <h1>Support and Review Information</h1>
+        <p>
+          NEXUS BREAK is a neon chain-reaction puzzle game. This page provides the public support surface used for
+          App Store registration, review follow-up, and player issue contact.
+        </p>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="stack">
+        <article class="card">
+          <h2>Before you contact support</h2>
+          <ul>
+            <li>Check that you are on the latest App Store build available to you.</li>
+            <li>Include your device model, iOS version, and a short description of the issue.</li>
+            <li>If the issue involves ads or progression, mention the exact screen where it happened.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>App Review notes</h2>
+          <ul>
+            <li>No login is required to access the core game flow.</li>
+            <li>The app is designed around drag, preview, and release puzzle gameplay.</li>
+            <li>Advertising is limited to non-gameplay surfaces and optional rewarded flows.</li>
+            <li>No paid digital content is required to access the current gameplay loop.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Contact</h2>
+          <p>
+            For support, review clarifications, or store metadata questions, contact:
+          </p>
+          <a class="contact-email" href="mailto:pakss3@naver.com">pakss3@naver.com</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      NEXUS BREAK support surface
+    </div>
+  </footer>
+</body>
+</html>
