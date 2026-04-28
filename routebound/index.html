@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Routebound — Support</title>
+  <meta name="description" content="Routebound support and privacy links for the calm arrow-order puzzle game." />
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #12201c;
+      --muted: #5d6b63;
+      --paper: #f8f1e2;
+      --mint: #52d3b1;
+      --deep: #142620;
+      --line: rgba(18, 32, 28, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-rounded, "Avenir Next", "Apple SD Gothic Neo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(82, 211, 177, 0.22), transparent 34rem),
+        linear-gradient(135deg, #fbf6ea 0%, #eef5ef 52%, #e6f0ee 100%);
+      line-height: 1.6;
+    }
+    header, main, footer { max-width: 1040px; margin: 0 auto; padding: 28px; }
+    .hero {
+      min-height: 54vh;
+      display: grid;
+      align-items: center;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+    }
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(20, 38, 32, 0.92);
+      color: #fff9ea;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    h1 { margin: 18px 0 10px; font-size: clamp(42px, 8vw, 86px); line-height: 0.95; letter-spacing: -0.06em; }
+    p { margin: 0 0 16px; color: var(--muted); font-size: 18px; }
+    a { color: inherit; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+    }
+    .button.primary { background: var(--deep); color: #fff9ea; border-color: var(--deep); }
+    .board {
+      border-radius: 38px;
+      padding: 26px;
+      min-height: 360px;
+      background:
+        linear-gradient(90deg, rgba(18, 32, 28, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(18, 32, 28, 0.08) 1px, transparent 1px),
+        rgba(255, 255, 255, 0.5);
+      background-size: 54px 54px;
+      border: 1px solid rgba(255,255,255,0.72);
+      box-shadow: 0 24px 80px rgba(20, 38, 32, 0.13);
+      position: relative;
+      overflow: hidden;
+    }
+    .route {
+      position: absolute;
+      left: 70px;
+      right: 72px;
+      top: 168px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff8d57, var(--mint));
+      box-shadow: 0 0 22px rgba(82, 211, 177, 0.42);
+    }
+    .arrow {
+      position: absolute;
+      top: 128px;
+      width: 82px;
+      height: 82px;
+      border-radius: 999px;
+      border: 7px solid var(--mint);
+      background: rgba(255,255,255,0.78);
+    }
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -38px;
+      top: 18px;
+      width: 0;
+      height: 0;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 34px solid var(--mint);
+    }
+    .arrow.one { left: 84px; }
+    .arrow.two { left: 262px; border-color: #ff8d57; }
+    .arrow.two::after { border-left-color: #ff8d57; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 24px; }
+    .card { border: 1px solid var(--line); background: rgba(255,255,255,0.68); border-radius: 22px; padding: 20px; }
+    .card strong { display: block; margin-bottom: 6px; font-size: 18px; }
+    footer { color: var(--muted); font-size: 14px; }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      .board { min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <section>
+      <span class="badge">Routebound</span>
+      <h1>Arrow order puzzles, calm by design.</h1>
+      <p>Tap arrows to send them in the direction they point. If the lane is blocked, the arrow bumps back. Clear the board by finding the right order.</p>
+      <div class="actions">
+        <a class="button primary" href="./privacy.html">Privacy Policy</a>
+        <a class="button" href="./support.html">Support</a>
+      </div>
+    </section>
+    <section class="board" aria-label="Routebound decorative board">
+      <div class="route"></div>
+      <div class="arrow one"></div>
+      <div class="arrow two"></div>
+    </section>
+  </header>
+  <main>
+    <div class="card-grid">
+      <div class="card"><strong>One clear rule</strong><p>Tap an arrow and it flies in the direction it points.</p></div>
+      <div class="card"><strong>Order matters</strong><p>Blocked arrows stay on the board until another route opens them.</p></div>
+      <div class="card"><strong>AdMob-ready</strong><p>Ads are designed to stay outside the puzzle board and avoid early-game interruption.</p></div>
+    </div>
+  </main>
+  <footer>
+    <p>Contact: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a></p>
+  </footer>
+</body>
+</html>
