@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sticker Atelier</title>
+    <meta
+      name="description"
+      content="Sticker Atelier turns baby and pet photos into local sticker sheets on your device."
+    />
+    <style>
+      :root {
+        --cream: #f7efdc;
+        --paper: #fffaf0;
+        --ink: #2f2a24;
+        --muted: #7c7062;
+        --coral: #ee644f;
+        --green: #5e9a87;
+        --line: rgba(47, 42, 36, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 18% 12%, rgba(238, 100, 79, 0.12), transparent 28%),
+          radial-gradient(circle at 88% 0%, rgba(94, 154, 135, 0.16), transparent 24%),
+          linear-gradient(180deg, var(--cream), #efe0c4);
+        font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+        line-height: 1.65;
+      }
+
+      main {
+        width: min(960px, 92vw);
+        margin: 0 auto;
+        padding: 52px 0 72px;
+      }
+
+      .hero,
+      .card {
+        background: rgba(255, 250, 240, 0.92);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: 0 22px 60px rgba(74, 55, 34, 0.12);
+      }
+
+      .hero {
+        padding: clamp(28px, 6vw, 56px);
+      }
+
+      .stamp {
+        display: inline-block;
+        margin-bottom: 18px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: var(--muted);
+        background: #ead7a7;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        transform: rotate(-1.5deg);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(38px, 8vw, 78px);
+        line-height: 0.98;
+        letter-spacing: -0.05em;
+      }
+
+      p {
+        margin: 14px 0 0;
+        max-width: 720px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 800;
+        background: var(--coral);
+        color: white;
+      }
+
+      .button.secondary {
+        background: var(--green);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+      }
+
+      footer {
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <span class="stamp">PRIVATE STICKER LAB</span>
+        <h1>Sticker Atelier</h1>
+        <p>
+          아기와 반려동물 사진을 기기 안에서 스티커 시트로 만드는 작은 작업대입니다.
+          사진 편집과 PNG 생성은 로컬에서 진행되며, 공유는 사용자가 직접 선택합니다.
+        </p>
+        <div class="actions">
+          <a class="button" href="privacy.html">개인정보 처리방침</a>
+          <a class="button secondary" href="support.html">지원 문의</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Sticker Atelier highlights">
+        <article class="card">
+          <h2>Local Photo Making</h2>
+          <p>Selected photos are used on-device to compose sticker PNG files and sticker sheets.</p>
+        </article>
+        <article class="card">
+          <h2>No Account</h2>
+          <p>The app does not require sign-in. Recent sticker sets are stored locally on the device.</p>
+        </article>
+        <article class="card">
+          <h2>Ad Supported</h2>
+          <p>Rewarded and native/banner ads support the app. Photo files are not uploaded to AdMob or Firebase.</p>
+        </article>
+      </section>
+
+      <footer>
+        © 2026 Pakss. Public app-ads.txt: <a href="../app-ads.txt">pakss3.github.io/app-ads.txt</a>
+      </footer>
+    </main>
+  </body>
+</html>
