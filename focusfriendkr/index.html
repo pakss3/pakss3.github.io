@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Focus Friend KR</title>
+  <style>
+    :root {
+      --ink: #252019;
+      --muted: #6e6050;
+      --paper: #fff7e8;
+      --cream: #f5e6cf;
+      --leaf: #6a805f;
+      --cocoa: #7a5741;
+      --gold: #d39d52;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 84% 10%, rgba(211,157,82,.28), transparent 30%),
+        radial-gradient(circle at 14% 24%, rgba(106,128,95,.22), transparent 28%),
+        linear-gradient(160deg, #fffaf0 0%, #f5e6cf 58%, #ead7bd 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+    header {
+      overflow: hidden;
+      padding: 78px 18px 56px;
+      color: #fff8ec;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255,218,157,.24), transparent 26%),
+        linear-gradient(135deg, #3f392e 0%, #6b5844 48%, #8d6b4c 100%);
+    }
+    .wrap { margin: 0 auto; max-width: 1040px; }
+    .eyebrow { color: rgba(255,248,236,.72); font-size: 14px; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: clamp(46px, 8vw, 92px); letter-spacing: -.055em; line-height: .95; margin: 12px 0 18px; }
+    .subtitle { color: rgba(255,248,236,.86); font-size: clamp(19px, 3vw, 27px); max-width: 720px; }
+    .cta { margin-top: 26px; }
+    .cta a {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      padding: 13px 18px;
+      border: 1px solid rgba(255,248,236,.28);
+      border-radius: 999px;
+      color: #fff8ec;
+      background: rgba(255,255,255,.12);
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+    }
+    main { padding: 42px 18px 54px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .card {
+      min-height: 178px;
+      padding: 24px;
+      border: 1px solid rgba(37,32,25,.11);
+      border-radius: 28px;
+      background: rgba(255,255,255,.54);
+      box-shadow: 0 22px 70px rgba(91,68,46,.10);
+    }
+    .card strong { color: var(--cocoa); display: block; font-size: 20px; margin-bottom: 8px; }
+    .note {
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--gold);
+      border-radius: 20px;
+      background: rgba(255,255,255,.45);
+      color: var(--muted);
+    }
+    footer { border-top: 1px solid rgba(37,32,25,.12); color: var(--muted); padding: 22px 18px 32px; }
+    a { color: #5e6f4f; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Cozy focus companion</div>
+      <h1>Focus Friend KR</h1>
+      <p class="subtitle">A gentle Korean-first focus timer where Pomodoro, deep focus, and quick sessions grow a cozy room with a tiny companion by your side.</p>
+      <div class="cta">
+        <a href="https://pakss3.github.io/focusfriendkr/privacy.html">Privacy Policy</a>
+        <a href="mailto:pakss328@gmail.com">Contact Support</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="grid">
+        <section class="card">
+          <strong>Focus with a small companion</strong>
+          <p>Start a session and your room companion quietly studies or works beside you.</p>
+        </section>
+        <section class="card">
+          <strong>Turn time into room growth</strong>
+          <p>Completed sessions earn Focus Stars that unlock room themes, decor, and character items.</p>
+        </section>
+        <section class="card">
+          <strong>Choose the right rhythm</strong>
+          <p>Pomodoro, deep focus, and quick sessions help students, exam takers, and remote workers begin fast.</p>
+        </section>
+        <section class="card">
+          <strong>Read progress gently</strong>
+          <p>Weekly reports show total time, sessions, streak, favorite mode, and recent seven-day movement without guilt-heavy pressure.</p>
+        </section>
+      </div>
+      <p class="note">Focus Friend KR is designed for local-first use. You can begin without creating an account, and core focus data stays on your device.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Support: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a></div>
+      <div>Copyright © 2026 Sangsu Park. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
