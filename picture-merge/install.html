@@ -145,11 +145,9 @@
   var msg = document.getElementById('detected-msg');
 
   if (isIOS) {
-    msg.textContent = 'iOS 기기가 감지되었습니다. App Store로 이동합니다…';
-    setTimeout(function() { window.location.href = iosUrl; }, 1500);
+    window.location.replace(iosUrl);
   } else if (isAndroid) {
-    msg.textContent = 'Android 기기가 감지되었습니다. Google Play로 이동합니다…';
-    setTimeout(function() { window.location.href = androidUrl; }, 1500);
+    window.location.replace(androidUrl);
   }
 </script>
 
