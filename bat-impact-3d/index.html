@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bat Impact 3D</title>
+  <meta name="description" content="Bat Impact 3D is a retro arcade baseball swing trainer for iOS." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f8ead0;
+      --muted: #b9a98c;
+      --panel: rgba(14, 18, 22, .82);
+      --chrome: #aeb5b8;
+      --red: #ff2b18;
+      --gold: #ffc33a;
+      --green: #66ff74;
+      --blue: #38a7ff;
+      --line: rgba(255, 209, 119, .28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next Condensed", "DIN Condensed", "Apple SD Gothic Neo", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 12%, rgba(255, 195, 58, .28), transparent 25rem),
+        radial-gradient(circle at 82% 18%, rgba(56, 167, 255, .22), transparent 22rem),
+        linear-gradient(180deg, #090b0f 0%, #15100a 60%, #25130a 100%);
+      letter-spacing: .02em;
+    }
+
+    main { max-width: 1040px; margin: 0 auto; padding: 44px 20px 70px; }
+
+    header, section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 28px;
+      padding: clamp(24px, 5vw, 42px);
+      margin-bottom: 18px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .36), inset 0 1px 0 rgba(255, 255, 255, .16);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 10vw, 104px);
+      line-height: .9;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 4px 0 #5f140d, 0 0 28px rgba(255, 43, 24, .55);
+    }
+
+    h2 { margin: 0 0 14px; color: var(--gold); font-size: clamp(26px, 5vw, 42px); text-transform: uppercase; }
+    p, li { color: var(--muted); font-size: 18px; line-height: 1.68; }
+    a { color: var(--gold); font-weight: 900; }
+
+    .tagline { color: var(--green); font-size: 22px; margin: 14px 0 0; text-transform: uppercase; }
+    .hud { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 28px; }
+    .meter { border: 1px solid rgba(174, 181, 184, .38); border-radius: 16px; padding: 16px; background: #050608; }
+    .label { color: var(--chrome); font-size: 13px; text-transform: uppercase; }
+    .value { color: #cfecff; font-family: "Courier New", monospace; font-size: 32px; font-weight: 800; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { display: inline-block; border-radius: 14px; padding: 13px 18px; text-decoration: none; color: #220b05; background: linear-gradient(180deg, #ffed7a, #ff9f1c); box-shadow: 0 5px 0 #7d2c05; }
+    .warning { border-left: 6px solid var(--red); padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Bat Impact 3D</h1>
+      <p class="tagline">Retro arcade swing speed trainer</p>
+      <p>스마트폰을 배트처럼 양손으로 잡고 휘두르며 스윙 속도, 예상 타구 속도, 피치 콘택트 타이밍을 즐기는 아케이드 야구 트레이너입니다.</p>
+      <div class="hud" aria-label="Feature meters">
+        <div class="meter"><div class="label">Swing Speed</div><div class="value">IMU</div></div>
+        <div class="meter"><div class="label">Pitch Contact</div><div class="value">KLANG</div></div>
+        <div class="meter"><div class="label">Locker</div><div class="value">3D BAT</div></div>
+      </div>
+      <div class="buttons">
+        <a class="button" href="./support.html">Support</a>
+        <a class="button" href="./privacy.html">Privacy Policy</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Modes</h2>
+      <ul>
+        <li>Speed Mode measures phone motion and shows swing speed, quality grade, XP, and coin rewards.</li>
+        <li>Pitch Contact Mode turns timing into PERFECT, GOOD, EARLY, LATE, or MISS results.</li>
+        <li>Pose Coach separates phone-in-hand grip guidance from camera-based stance review.</li>
+        <li>Locker keeps bat skins cosmetic-only for ranked speed fairness.</li>
+      </ul>
+    </section>
+
+    <section class="warning">
+      <h2>Safety And Accuracy</h2>
+      <p>사용 전 주변 공간을 반드시 확인하고 휴대폰을 양손으로 단단히 잡으세요. 앱의 스윙 속도는 스마트폰 센서 기반 측정/추정값이며, 예상 타구 속도와 비거리는 공식 레이더 측정값이 아닌 게임형 추정값입니다.</p>
+    </section>
+  </main>
+</body>
+</html>
