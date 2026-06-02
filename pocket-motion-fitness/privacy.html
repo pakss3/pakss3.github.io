@@ -21,44 +21,187 @@
       padding: clamp(24px, 5vw, 48px);
       box-shadow: 0 20px 60px rgba(38, 56, 44, 0.12);
     }
-    h1, h2 { line-height: 1.15; }
+    h1, h2, h3 { line-height: 1.15; }
     a { color: #2d6f16; font-weight: 700; }
     .meta { color: #63746a; }
+    .notice {
+      border: 1px solid #cde9b5;
+      background: #f5ffe9;
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.45rem 0; }
   </style>
 </head>
 <body>
   <main>
     <h1>Pocket Motion Fitness Privacy Policy</h1>
-    <p class="meta">Last updated: May 14, 2026</p>
-    <p>
-      Pocket Motion Fitness is designed as a camera-free, phone-in-pocket workout companion.
-      This policy explains how the app handles data.
+    <p class="meta">Last updated: June 2, 2026</p>
+    <p class="notice">
+      Pocket Motion Fitness is a camera-free, phone-in-pocket workout companion. Workout history is
+      stored locally by default. The app may use Google AdMob, Firebase Analytics, and Firebase
+      Crashlytics for ads, product analytics, and crash diagnostics as described below.
     </p>
-    <h2>Data Collection</h2>
+
+    <h2>한국어 요약</h2>
     <p>
-      The app does not collect data from users for tracking, advertising, analytics, data broker
-      sale, or developer-operated server storage.
+      Pocket Motion Fitness는 카메라 없이 휴대폰의 움직임을 사용해 운동을 돕는 앱입니다.
+      운동 기록은 기본적으로 기기에 저장됩니다. 앱 운영, 광고 표시, 품질 개선, 오류 진단을
+      위해 Google AdMob, Firebase Analytics, Firebase Crashlytics가 제한된 데이터를 처리할 수
+      있습니다. 사용자는 앱의 <strong>설정 &gt; 개인정보 및 데이터 &gt; 데이터 삭제</strong>에서
+      로컬 운동 기록을 삭제할 수 있으며, 추가 삭제 요청은
+      <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a>으로 보낼 수 있습니다.
     </p>
-    <h2>On-Device Motion Processing</h2>
+
+    <h2>Developer and Contact</h2>
     <p>
-      Workout motion signals may be processed on the device to estimate exercise state, confidence,
-      and repetition progress. These signals are used locally for app functionality and are not sent
-      to the developer.
+      Developer contact: <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a>.
+      Contact us if you have privacy questions or data deletion requests.
     </p>
+
+    <h2>Data We Process</h2>
+    <ul>
+      <li>
+        <strong>Workout and motion data:</strong> motion signals, exercise state, repetition count,
+        confidence, workout history, corrections, and settings may be processed on device to provide
+        workout feedback.
+      </li>
+      <li>
+        <strong>App activity and analytics:</strong> limited app usage events, screen flow, workout
+        start/completion, feature use, and diagnostic events may be processed with Firebase Analytics
+        to improve app quality and reliability.
+      </li>
+      <li>
+        <strong>Crash and performance data:</strong> crash logs, device model, operating system
+        version, app version, and install-scoped diagnostic identifiers may be processed with Firebase
+        Crashlytics to diagnose and fix stability issues.
+      </li>
+      <li>
+        <strong>Advertising data:</strong> Google AdMob may process device information, ad
+        interaction data, approximate identifiers, and the Android Advertising ID where available to
+        display and measure ads.
+      </li>
+    </ul>
+
+    <h2>On-Device Workout Processing</h2>
+    <p>
+      Workout motion signals are primarily processed on the device to estimate exercise state,
+      confidence, and repetition progress. Pocket Motion Fitness does not require a camera and does
+      not record video for workout counting.
+    </p>
+    <p>
+      Workout history is stored locally by default. Developer-operated remote workout record upload
+      is disabled by default and is not used unless a separate explicit opt-in is provided in the
+      app.
+    </p>
+
     <h2>Accounts and Login</h2>
     <p>
       The app does not require account creation or login.
     </p>
+
     <h2>Health, Fitness, and Permissions</h2>
     <p>
-      The app may request motion-related permissions to provide workout feedback. Permission use is
-      limited to app functionality. The app is not a medical device and does not provide medical
-      diagnosis, treatment, or rehabilitation advice.
+      The app may request motion/activity, microphone, speech recognition, notification, or vibration
+      related permissions when needed for workout feedback, voice coaching, speech-based rep entry,
+      reminders, or haptic guidance. Permission use is limited to app functionality.
     </p>
-    <h2>Third Parties</h2>
     <p>
-      The app does not use third-party advertising SDKs or developer-operated analytics collection.
+      Pocket Motion Fitness is a fitness companion, not a medical device. It does not provide medical
+      diagnosis, treatment, rehabilitation advice, or emergency services.
     </p>
+
+    <h2>Third-Party Services</h2>
+    <p>The app may use the following third-party services:</p>
+    <ul>
+      <li>
+        <strong>Google AdMob:</strong> used to display ads and measure ad performance. AdMob may use
+        the Android Advertising ID and related device/ad interaction data according to Google
+        policies.
+      </li>
+      <li>
+        <strong>Firebase Analytics:</strong> used for aggregated product analytics and feature
+        quality measurement.
+      </li>
+      <li>
+        <strong>Firebase Crashlytics:</strong> used for crash reporting and stability diagnostics.
+      </li>
+      <li>
+        <strong>Firebase/Google services:</strong> may process app instance identifiers, diagnostic
+        identifiers, device information, and event data required for the services above.
+      </li>
+    </ul>
+
+    <h2>Advertising ID</h2>
+    <p>
+      On Android, the app declares and may use the Google Advertising ID permission for AdMob ads.
+      You can reset or delete your device advertising ID through Android system settings where
+      supported.
+    </p>
+
+    <h2>Data Retention / 데이터 보관 기간</h2>
+    <ul>
+      <li>
+        <strong>Local workout history and settings:</strong> retained on your device until you delete
+        them in the app, clear app data, or uninstall the app.
+      </li>
+      <li>
+        <strong>App-owned local install identifier:</strong> retained on your device until local data
+        deletion, app data clearing, or uninstall. It may be regenerated on a later launch.
+      </li>
+      <li>
+        <strong>AdMob, Firebase Analytics, and Crashlytics data:</strong> retained by Google/Firebase
+        according to their service settings, retention controls, and legal requirements.
+      </li>
+      <li>
+        <strong>Developer-operated remote workout records:</strong> disabled by default. If a future
+        explicit opt-in is offered and enabled, records will be retained only for the stated feature
+        purpose until opt-out, deletion request, or account/app data deletion where applicable.
+      </li>
+    </ul>
+
+    <h2>Data Deletion / 데이터 삭제 방법</h2>
+    <ul>
+      <li>
+        In the app, open <strong>Settings &gt; Privacy &amp; Data &gt; Delete data</strong> to delete
+        local workout history and correction records from the device.
+      </li>
+      <li>
+        You can also uninstall the app or clear app data through your device settings to remove local
+        app data from the device.
+      </li>
+      <li>
+        For additional deletion requests, email
+        <a href="mailto:pakss328@gmail.com">pakss328@gmail.com</a>. We will review and process
+        requests within a reasonable period, generally within 30 days where legally and technically
+        possible.
+      </li>
+      <li>
+        Advertising and diagnostic provider data may also be affected by resetting your device
+        Advertising ID or by using Google/Firebase privacy controls where available.
+      </li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>
+      The app is designed to minimize remote workout data collection and to keep workout history
+      local by default. Third-party data transfers use the security controls provided by Google,
+      Firebase, and the operating system.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Pocket Motion Fitness is not directed to children and does not knowingly collect personal data
+      from children.
+    </p>
+
+    <h2>Policy Updates</h2>
+    <p>
+      We may update this policy when the app changes or when legal, store, or platform requirements
+      change. The latest version will be available at this URL.
+    </p>
+
     <h2>Contact</h2>
     <p>
       For privacy questions, contact the developer at
